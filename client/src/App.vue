@@ -1,20 +1,21 @@
 <template>
     <div id="app">
-        <NavBar />
+        <h3 style="text-align:center;color:gray;font-size:24px"> welcome to BECS, the #1 desitnation for college information</h3>
+        <Welcome />
 
         <main>
-            <router-view />
         </main>
     </div>
 </template>
 
 <script>
-import NavBar from '@/components/NavBar'
+//import NavBar from '@/components/NavBar'
+import Welcome from '@/views/Welcome'
 
 export default {
     name: 'app',
-    components: { NavBar },
-
+    components: {Welcome},
+// removed NavBar from components
     created() {
         this.$store.dispatch('updateSubscribedSubvues')
     }
