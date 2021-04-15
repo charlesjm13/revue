@@ -1,6 +1,12 @@
 <template lang="html">
-  <div class="home container">
+  <div class="home container" style="background: #779FA1">
     <h1>College Ratings</h1>
+    <div>
+    <select>
+      <option>Select A School</option>
+      <option>Knox College</option>
+    </select>
+    </div>
   </div>
 </template>
 

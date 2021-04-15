@@ -1,12 +1,14 @@
 <template lang="html">
-  <div class="home container">
+  <div class="home container" style="background: #779FA1;">
     <h1>Course Ratings</h1>
+    <select>
+      <option>Select A School</option>
+      <option>Knox College</option>
+    </select>
   </div>
 </template>
 
 <script>
-
-
 export default {
   name: 'home',
 
