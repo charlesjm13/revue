@@ -6,7 +6,6 @@
 
 <script>
 
-
 export default {
   name: 'home',
 
@@ -15,9 +14,8 @@ export default {
   data() {
     return {
     }
-  },
-
   }
+
 }
 </script>
 
