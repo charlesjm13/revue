@@ -23,4 +23,7 @@ export default {
 </script>
 
 <style lang="css">
+select {
+  background: #faf7f2;
+}
 </style>
