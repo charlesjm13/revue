@@ -10,20 +10,24 @@
       <input type="password" v-model="password" placeholder="Password">
       <input type="password" v-model="passwordRepeat" placeholder="Repeat Password">
       <p v-if="!passwordsMatch" class="error">Passwords do not match!</p>
-      <div style="text-align: center">
-        <label for="user-types">Enter your user type:</label>
-          <select name="user-types" v-model="userType" style="margin-left: 70px;">
+      
+        <label for="user-types" style="float:left; padding-top: 5px; padding-left: 20px;">User Type:</label>
+      <div style="padding-bottom: 5px; padding-right: 20px;">
+          <select name="user-types" v-model="userType" style="float:right; padding: 5px 0px 5px 0px;">
            <option value="" disabled selected>Enter user type</option>
            <option value="Current Student"> Current Student </option>
            <option value="Prospective Student"> Prospective Student </option>
           </select>
       </div>
-      <div v-if="userType === 'Current Student'" style="text-align: center; padding-top: 20px">
-        <label for="current-school">Enter your current school:</label>
-          <select name="current-school" v-model="userSchool" style="margin-left: 50px;">
-           <option value="" disabled selected>Enter your school</option>
+      <br>
+      <div v-if="userType === 'Current Student'" style="padding-top: 20px">
+        <label for="current-school" style="float:left; padding-bottom: 25px; padding-top: 5px; padding-left: 20px;">Current School:</label>
+         <div style="padding-right: 20px;">
+          <select name="current-school" v-model="userSchool" style="float:right; padding: 5px 28px 5px 0px;">
+           <option value="" disabled selected>Select a school</option>
            <option value="Current Student"> Knox College </option>
           </select>
+          </div>
       </div>
       <input class="button" type="submit" value="Sign Up">
     </form>
@@ -124,7 +128,7 @@ export default {
 
 <style scoped lang="css">
 .signup {
-  background: rgb(23, 92, 93);
+  background: rgb(119, 159, 161);
   background-image: url(/static/newsletter-login.jpg);
   background-position: center;
   background-size: cover;
@@ -141,7 +145,7 @@ export default {
 }
 
 form {
-  background-color: white;
+  background-color: #E0CBA8;
   max-width: 500px;
   width: 90%;
   margin-bottom: 49px;
@@ -157,7 +161,7 @@ input {
   width: 100%;
   margin: 0;
   border: none;
-  background: rgb(223, 224, 221);
+  background: #faf7f2;
   padding: 15px;
   text-align: center;
   margin: 20px 0;
@@ -165,5 +169,8 @@ input {
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
+}
+select {
+  background: #faf7f2;
 }
 </style>
