@@ -11,6 +11,7 @@
         },
         methods: {
             onClick(){
+                this.$router.push({name: 'SignUp'})
                 console.log('switch to sign up screen')
             }
         }
