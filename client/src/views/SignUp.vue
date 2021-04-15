@@ -161,7 +161,7 @@ input {
   width: 100%;
   margin: 0;
   border: none;
-  background: #faf7f2;
+  background: #FAF7F2;
   padding: 15px;
   text-align: center;
   margin: 20px 0;
