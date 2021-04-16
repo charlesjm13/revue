@@ -23,8 +23,7 @@ export default {
 
 .img{
   display:block;
-  margin-left:auto;
-  margin-right:auto;
-  width:58%;
+  margin: auto;
+  width:50%;
 }
 </style>
