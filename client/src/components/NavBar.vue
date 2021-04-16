@@ -1,6 +1,8 @@
 <template lang="html">
   <nav>
-    <router-link class="title" :to="{ name: 'Home', params: {} }">ReVue</router-link>
+    <router-link class="title" :to="{ name: 'Home', params: {} }">BECS</router-link>
+    <router-link class="title" :to="{ name: 'About'}">About</router-link>
+
     <div class="dropdown">
       <button class="dropbtn">Subvues</button>
       <div class="dropdown-content">
@@ -13,9 +15,10 @@
       </div>
     </div>
 
+
     <router-link v-if="!$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'SignUp', params: {} }">Sign Up</router-link>
     <router-link v-if="!$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'Login', params: {} }">Login</router-link>
-
+   
     <a v-if="$store.state.isUserLoggedIn" style="float:right" @click="logout()">Logout</a>
     <router-link v-if="$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'User', params: { username: $store.state.user.username } }">{{ $store.state.user.username }}</router-link>
   </nav>
@@ -38,7 +41,7 @@ export default {
 <style scoped lang="css">
 nav {
   overflow: hidden;
-  background-color: #333;
+  background-color:#779fA1;
   font-family: Arial;
 }
 
@@ -56,7 +59,7 @@ nav a {
 }
 
 .create-subvue {
-  background-color: rgb(23, 92, 93);
+  background-color: #779FA1;
   color: white !important;
 }
 
@@ -81,7 +84,7 @@ nav a {
 }
 
 nav a:hover, .dropdown:hover .dropbtn {
-  background-color: #111;
+  background-color: #E0CBA8;
 }
 
 .dropdown-content {
