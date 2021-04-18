@@ -7,13 +7,18 @@
       <option>Knox College</option>
     </select>
     </div>
+    <div style="margin: auto; text-align:center;">
+    <Ratings></Ratings>
+    </div>
   </div>
 </template>
 
 <script>
+import Ratings from  '@/components/Ratings'
+
 export default {
   name: 'home',
-  components: {},
+  components: {Ratings},
   data() {
     return {
     }
