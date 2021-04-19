@@ -62,6 +62,6 @@ export default {
 
 <style>
   form{
-    text-align: left;
+    text-align: center;
   }
 </style>
