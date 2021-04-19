@@ -75,7 +75,7 @@ const routes = [
   },
   {
     path: '/:username/settings',
-    name: 'settings',
+    name: 'Settings',
     component: () => import(/* webpackChunkName: "usersettings" */ '@/views/Settings')
   },
 ]
