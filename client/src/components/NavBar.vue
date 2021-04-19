@@ -20,11 +20,10 @@
     <router-link v-if="$store.state.isUserLoggedIn" style="float:left" :to="{ name: 'CollegeRatings', params: {} }">College Ratings</router-link>
     <router-link v-if="!$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'SignUp', params: {} }">Sign Up</router-link>
     <router-link v-if="!$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'Login', params: {} }">Login</router-link>
-    
-    
+     
     <a v-if="$store.state.isUserLoggedIn" style="float:right" @click="logout()">Logout</a>
     <router-link v-if="$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'User', params: { username: $store.state.user.username } }">{{ $store.state.user.username }}</router-link>
-    <router-link v-if="$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'Settings', params: {} }">Settings</router-link>
+    <router-link v-if="$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'Settings', params: {username: $store.state.user.username} }">Settings</router-link>
   </nav>
 </template>
 
