@@ -1,38 +1,80 @@
 <template lang="html">
-  <div class="home container" style="background: #779FA1">
-    <h1>Recent Posts</h1>
-    <PostPreview v-for="post in posts" :key="post.id" :post="post">
-      {{ post.title }}
-    </PostPreview>
+  <div class="home container">
+    <div class = "txtcenter">
+      <h1>WELCOME TO BECS!</h1>    
+      <h2>To know your place better</h2>
+    </div>
+    <div class = "idk">
+      <img  src= "/assets/image3.jpg" width="800" height="400">
+     
+    </div>
+  
 
-    <CreateButton></CreateButton>
+    <!-- <PostPreview v-for="post in posts" :key="post.id" :post="post">
+      {{ post.title }}
+    </PostPreview> -->
+
+    <!-- <CreateButton></CreateButton> -->
   </div>
 </template>
 
+
 <script>
-import PostPreview from '@/components/PostPreview'
-import PostsService from '@/services/PostsService'
-import CreateButton from '@/components/CreateButton'
+// import PostPreview from '@/components/PostPreview'
+import PostsService from "@/services/PostsService";
+// import CreateButton from '@/components/CreateButton'
 
 export default {
-  name: 'home',
+  name: "home",
 
-  components: { PostPreview, CreateButton },
+  // components: { PostPreview, CreateButton },
 
   data() {
     return {
-      posts: null
-    }
+      posts: null,
+    };
   },
 
   mounted() {
-    PostsService.index()
-      .then(response => {
-        this.posts = response.data
-      })
-  }
-}
+    PostsService.index().then((response) => {
+      this.posts = response.data;
+    });
+  },
+};
 </script>
 
 <style lang="css">
+@import url('https://fonts.googleleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+body{
+  font-family: 'Poppins', sans-serif;
+}
+ /* #app{ 
+  width: 9000px;
+  height: 100vh;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+} */
+
+.txtcenter {
+  text-align: center;
+}
+
+.idk {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 57%;
+}
+.img{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  width:10%;
+}
 </style>
+
