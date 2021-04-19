@@ -28,6 +28,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "signup" */ '@/views/SignUp')
   },
   {
+    path: '/QnA',
+    name: 'QnA',
+    component: () => import(/* webpackChunkName: "signup" */ '@/views/QnA')
+  },
+  {
     path: '/s/:name',
     name: 'Subvue',
     component: () => import(/* webpackChunkName: "subvue" */ '@/views/Subvue')
