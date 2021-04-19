@@ -20,7 +20,7 @@
           </select>
       </div>
       <br>
-      <div v-if="userType === 'Current Student'" style="padding-top: 20px">
+      <div v-if="usertype === 'Current Student'" style="padding-top: 20px">
         <label for="current-school" style="float:left; padding-bottom: 25px; padding-top: 5px; padding-left: 20px;">Current School:</label>
          <div style="padding-right: 20px;">
           <select name="current-school" v-model="userschool" style="float:right; padding: 5px 28px 5px 0px;">
