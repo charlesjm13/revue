@@ -44,6 +44,11 @@ const routes = [
     name: 'CreateSubvue',
     component: () => import(/* webpackChunkName: "createsubvue" */ '@/views/CreateSubvue')
   },
+  {
+    path: '/:username/settings',
+    name: 'settings',
+    component: () => import(/* webpackChunkName: "usersettings" */ '@/views/Settings')
+  },
 ]
 
 const router = createRouter({
