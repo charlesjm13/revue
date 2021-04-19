@@ -53,7 +53,12 @@ const routes = [
     path: '/ratings/colleges',
     name: 'CollegeRatings',
     component: () => import(/* webpackChunkName: "collegeratings" */ '@/views/CollegeRatings')
-  }
+  },
+  {
+    path: '/:username/settings',
+    name: 'settings',
+    component: () => import(/* webpackChunkName: "usersettings" */ '@/views/Settings')
+  },
 ]
 
 const router = createRouter({
