@@ -1,5 +1,4 @@
 <template lang="html">
-<<<<<<< HEAD
   <div class="home container">
     <div class = "txtcenter">
       <h1>WELCOME TO BECS!</h1>    
@@ -12,11 +11,6 @@
   
 
     <!-- <PostPreview v-for="post in posts" :key="post.id" :post="post">
-=======
-  <div class="home container" style="background: #779FA1">
-    <h1>Recent Posts</h1>
-    <PostPreview v-for="post in posts" :key="post.id" :post="post">
->>>>>>> charles
       {{ post.title }}
     </PostPreview> -->
 
