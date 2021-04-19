@@ -49,6 +49,16 @@ const routes = [
     name: 'CreateSubvue',
     component: () => import(/* webpackChunkName: "createsubvue" */ '@/views/CreateSubvue')
   },
+  {
+    path: '/ratings/courses',
+    name: 'CourseRatings',
+    component: () => import(/* webpackChunkName: "courseratings" */ '@/views/CourseRatings')
+  },
+  {
+    path: '/ratings/colleges',
+    name: 'CollegeRatings',
+    component: () => import(/* webpackChunkName: "collegeratings" */ '@/views/CollegeRatings')
+  }
 ]
 
 const router = createRouter({

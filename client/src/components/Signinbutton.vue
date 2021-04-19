@@ -11,6 +11,7 @@
         },
         methods: {
             onClick(){
+                this.$router.push({name: 'Login'})
                 console.log('switch to sign in screen')
             }
         }

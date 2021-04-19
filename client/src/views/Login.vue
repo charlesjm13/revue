@@ -49,7 +49,7 @@ export default {
 
 <style scoped lang="css">
 .login {
-  background: rgb(23, 92, 93);
+  background: #779FA1;
   background-image: url(/static/newsletter-login.jpg);
   background-position: center;
   background-size: cover;
@@ -66,7 +66,7 @@ export default {
 }
 
 form {
-  background-color: white;
+  background-color: #E0CBA8;
   max-width: 500px;
   width: 90%;
   margin-bottom: 49px;
@@ -82,7 +82,7 @@ input {
   width: 100%;
   margin: 0;
   border: none;
-  background: rgb(223, 224, 221);
+  background: #FAF7F2;
   padding: 15px;
   text-align: center;
   margin: 20px 0;
