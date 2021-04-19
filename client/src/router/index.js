@@ -27,17 +27,16 @@ const routes = [
     name: 'SignUp',
     component: () => import(/* webpackChunkName: "signup" */ '@/views/SignUp')
     },
-
-    {
-        path: '/settings',
-        name: 'Settings',
-        component: () => import(/* webpackChunkName: "settings" */ '@/views/Settings')
-    },
   {
     path: '/QnA',
     name: 'QnA',
     component: () => import(/* webpackChunkName: "signup" */ '@/views/QnA')
   },
+    {
+        path: '/:username/profile',
+        name: 'Profile',
+        component: () => import(/* webpackChunkName: "profile" */ '@/views/Profile')
+    },
   {
     path: '/s/:name',
     name: 'Subvue',
