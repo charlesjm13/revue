@@ -14,7 +14,7 @@
         <router-link class="create-subvue" :to="{ name: 'CreateSubvue' }">Create a Subvue</router-link>
       </div>
     </div> -->
-
+    <router-link v-if="$store.state.isUserLoggedIn" style="float:left" :to="{ name: 'Landing', params: {} }">Home</router-link>
     <router-link v-if="$store.state.isUserLoggedIn" style="float:left" :to="{ name: 'QnA', params: {} }">QnA</router-link>
     <router-link v-if="$store.state.isUserLoggedIn" style="float:left" :to="{ name: 'CourseRatings', params: {} }">Course Ratings</router-link>
     <router-link v-if="$store.state.isUserLoggedIn" style="float:left" :to="{ name: 'CollegeRatings', params: {} }">College Ratings</router-link>
