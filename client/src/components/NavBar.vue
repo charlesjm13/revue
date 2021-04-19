@@ -1,9 +1,9 @@
 <template lang="html">
   <nav>
-    <router-link class="title" :to="{ name: 'Home', params: {} }">BECS</router-link>
-    <router-link class="title" :to="{ name: 'About'}">About</router-link>
+    <router-link v-if="!$store.state.isUserLoggedIn" class="title" :to="{ name: 'Home', params: {} }">BECS</router-link>
+    <router-link v-if="!$store.state.isUserLoggedIn" class="title" :to="{ name: 'About'}">About</router-link>
 
-    <div class="dropdown">
+    <!-- <div class="dropdown">
       <button class="dropbtn">Subvues</button>
       <div class="dropdown-content">
         <router-link
@@ -13,9 +13,11 @@
           >{{ subvue.name }}</router-link>
         <router-link class="create-subvue" :to="{ name: 'CreateSubvue' }">Create a Subvue</router-link>
       </div>
-    </div>
+    </div> -->
 
-<router-link v-if="$store.state.isUserLoggedIn" style="float:left" :to="{ name: 'QnA', params: {} }">QnA</router-link>
+    <router-link v-if="$store.state.isUserLoggedIn" style="float:left" :to="{ name: 'QnA', params: {} }">QnA</router-link>
+    <router-link v-if="$store.state.isUserLoggedIn" style="float:left" :to="{ name: 'CourseRatings', params: {} }">Course Ratings</router-link>
+    <router-link v-if="$store.state.isUserLoggedIn" style="float:left" :to="{ name: 'CollegeRatings', params: {} }">College Ratings</router-link>
     <router-link v-if="!$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'SignUp', params: {} }">Sign Up</router-link>
     <router-link v-if="!$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'Login', params: {} }">Login</router-link>
     
