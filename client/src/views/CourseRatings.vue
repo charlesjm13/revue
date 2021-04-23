@@ -1,11 +1,11 @@
 <template lang="html">
-  <div class="home container" style="background: #779FA1;">
+  <div class="home container" style="margin: auto; text-align: center;">
     <h1>Course Ratings</h1>
     <select>
-      <option>Select A School</option>
+      <option value="" disabled selected>Select A School</option>
       <option>Knox College</option>
     </select>
-    <div style="margin: auto; text-align:center;">
+    <div style="margin: auto; text-align:center; padding-top: 20px;">
     <Ratings></Ratings>
     </div>
   </div>

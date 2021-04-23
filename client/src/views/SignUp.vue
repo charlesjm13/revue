@@ -25,7 +25,7 @@
          <div style="padding-right: 20px;">
           <select name="current-school" v-model="userschool" style="float:right; padding: 5px 28px 5px 0px;">
            <option value="" disabled selected>Select a school</option>
-           <option value="Current Student"> Knox College </option>
+           <option value="Knox College"> Knox College </option>
           </select>
           </div>
       </div>

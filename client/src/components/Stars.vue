@@ -52,9 +52,6 @@
         v-on:click="numStars = 5" 
         v-if="numStars == 4 || numStars == 3 || numStars == 2 || numStars == 1 || numStars == 0">
     </i>
-    <div>
-        Number of Stars: {{numStars}}
-    </div>
 </template>
 
 <script>
