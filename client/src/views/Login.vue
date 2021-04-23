@@ -49,7 +49,7 @@ export default {
 
 <style scoped lang="css">
 .login {
-  background: #779FA1;
+  background: #564154;
   background-image: url(/static/newsletter-login.jpg);
   background-position: center;
   background-size: cover;

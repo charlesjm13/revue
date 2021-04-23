@@ -1,8 +1,7 @@
 <template>
     <div id="app">
     <NavBar />
-    <!-- think we still want the navbar here -->
-        <h3 style="text-align:center;color:gray;font-size:24px"> welcome to BECS, the #1 desitnation for college information</h3>
+        <h2 style="font-family:verdana;"> Welcome to BECS, the #1 desitnation for college information</h2>
         <Welcome />
 
         <main>
@@ -28,7 +27,7 @@ export default {
 
 <style>
 #app {
-    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    font-family: Verdana, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     align-items: center;
@@ -37,6 +36,12 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: yellow;
+    background-color: #564154;
+}
+h2 {
+    text-align:center;
+    color:#FF6542;
+    font-size:28px;
+    font-family:"Verdana";
 }
 </style>

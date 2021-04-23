@@ -8,7 +8,7 @@ html, body {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    font-family: 'Verdana', sans-serif;
 }
 
 a {
@@ -25,12 +25,19 @@ a {
     padding: 10px 20px;
 }
 
+p{
+    color: rgb(224, 203, 168);
+}
+
 .button {
     background: #564154 !important;
-    color: white;
+    color: black;
     cursor: pointer;
 }
 
+.button-close {
+    background: #FF6542
+}
 .error {
     color: rgb(150, 47, 47);
     text-align: center;

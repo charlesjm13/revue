@@ -1,6 +1,6 @@
 <template lang="html">
-  <div class="home container" style="background: #779FA1">
-    <h1>Recent Posts</h1>
+  <div class="home container" style="background: #564154">
+    <h1 style="color:#E0CBA8">Recent Posts</h1>
     <PostPreview v-for="post in posts" :key="post.id" :post="post">
       {{ post.title }}
     </PostPreview>
@@ -9,11 +9,10 @@
   </div>
 </template>
 
-<script>
+<script> 
 import PostPreview from '@/components/PostPreview'
 import PostsService from '@/services/PostsService'
 import CreateButton from '@/components/CreateButton'
-
 export default {
   name: 'home',
 
@@ -33,6 +32,3 @@ export default {
   }
 }
 </script>
-
-<style lang="css">
-</style>
