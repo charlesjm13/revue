@@ -1,6 +1,6 @@
 <template lang="html">
-  <div class="home container" style="background: #564154">
-    <h1 style="color:#E0CBA8">Recent Posts</h1>
+  <div class="home container" style="background: #F9E088">
+    <h1 style="color:#212c2e">Recent Posts</h1>
     <PostPreview v-for="post in posts" :key="post.id" :post="post">
       {{ post.title }}
     </PostPreview>

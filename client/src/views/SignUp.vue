@@ -128,7 +128,7 @@ export default {
 
 <style scoped lang="css">
 .signup {
-  background: #564154;
+  background: #F9E088;
   background-image: url(/static/newsletter-login.jpg);
   background-position: center;
   background-size: cover;

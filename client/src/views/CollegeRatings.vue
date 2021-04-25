@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="home container" style="background: #779FA1">
-    <h1 style="color:#E0CBA8">College Ratings</h1>
+    <h1 style="color:#212c2e">College Ratings</h1>
     <div>
     <select>
       <option>Select A School</option>Welcome to BECS, the #1 desitnation for college information
@@ -23,6 +23,6 @@ export default {
 
 <style lang="css">
 select {
-  background: #564154;
+  background: #212c2e;
 }
 </style>

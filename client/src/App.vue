@@ -1,7 +1,7 @@
 <template>
     <div id="app">
     <NavBar />
-        <h2 style="font-family:verdana;"> Welcome to BECS, the #1 desitnation for college information</h2>
+        <h2> Welcome to BECS, the destination for college information</h2>
         <Welcome />
 
         <main>
@@ -36,12 +36,12 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #564154;
+    background-color: #F9E088;
 }
 h2 {
     text-align:center;
-    color:#FF6542;
+    color:#212C2E;
     font-size:28px;
-    font-family:"Verdana";
+    font-family:"Verdana", sans-serif;
 }
 </style>

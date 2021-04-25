@@ -38,8 +38,8 @@ export default {
 <style scoped lang="css">
 nav {
   overflow: hidden;
-  background-color: #333;
-  font-family: Arial;
+  background-color: #212C2E;
+  font-family: Verdana;
 }
 
 nav a {
@@ -56,12 +56,12 @@ nav a {
 }
 
 .create-subvue {
-  background-color: rgb(23, 92, 93);
+  background-color: rgb(33,44,46);
   color: white !important;
 }
 
 .create-subvue:hover {
-  background-color: rgb(7, 44, 45) !important;
+  background-color: rgb(240, 234, 214) !important;
 }
 
 .dropdown {
@@ -81,13 +81,13 @@ nav a {
 }
 
 nav a:hover, .dropdown:hover .dropbtn {
-  background-color: #111;
+  background-color: #212C2E;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #f0ead6;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -103,7 +103,7 @@ nav a:hover, .dropdown:hover .dropbtn {
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #f0ead6;
 }
 
 .dropdown:hover .dropdown-content {
