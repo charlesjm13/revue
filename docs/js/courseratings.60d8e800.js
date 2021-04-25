@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["courseratings"],{ff15:function(n,e,t){"use strict";t.r(e);var o=t("7a23"),r={class:"home container"},a=Object(o["g"])("h1",null,"Course Ratings",-1);function c(n,e,t,c,s,u){return Object(o["p"])(),Object(o["d"])("div",r,[a])}var s={name:"home",components:{},data:function(){return{}}};s.render=c;e["default"]=s}}]);
-//# sourceMappingURL=courseratings.60d8e800.js.map

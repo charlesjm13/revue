@@ -12,12 +12,12 @@
 
 <script>
 import NavBar from '@/components/NavBar'
-// import Welcome from '@/views/Welcome' -->
+import Welcome from '@/views/Welcome'
 
 export default {
     name: 'app',
-    components: {NavBar},
-    //Welcome
+    components: {Welcome, NavBar},
+// removed NavBar from components
     created() {
         this.$store.dispatch('updateSubscribedSubvues')
     }
@@ -36,6 +36,6 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: gray;
+    background-color: yellow;
 }
 </style>

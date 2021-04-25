@@ -1,9 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import Home from '@/views/Home'
+  // import HomeScreen from '@/views/HomeScreen'
 
 // GUIDE: This file defines urls for the frontend
 const routes = [
+  
+  
   {
     path: '/',
     name: 'Home',
@@ -15,15 +18,36 @@ const routes = [
     component: () => import(/* webpackChunkName: "login" */ '@/views/Login')
   },
   {
+    path: '/about',
+    name: 'About',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/About')
+  },
+  {
     path: '/signup',
     name: 'SignUp',
     component: () => import(/* webpackChunkName: "signup" */ '@/views/SignUp')
+    },
+    {
+      path: '/Landing',
+      name: 'Landing',
+      component: () => import(/* webpackChunkName: "signup" */ '@/views/Landing')
+    },
+  {
+    path: '/QnA',
+    name: 'QnA',
+    component: () => import(/* webpackChunkName: "signup" */ '@/views/QnA')
   },
+    {
+        path: '/:username/profile',
+        name: 'Profile',
+        component: () => import(/* webpackChunkName: "profile" */ '@/views/Profile')
+    },
   {
     path: '/s/:name',
     name: 'Subvue',
     component: () => import(/* webpackChunkName: "subvue" */ '@/views/Subvue')
   },
+
   {
     path: '/s/:subvuePermalink/:id',
     name: 'Post',
@@ -53,7 +77,12 @@ const routes = [
     path: '/ratings/colleges',
     name: 'CollegeRatings',
     component: () => import(/* webpackChunkName: "collegeratings" */ '@/views/CollegeRatings')
-  }
+  },
+  {
+    path: '/:username/settings',
+    name: 'Settings',
+    component: () => import(/* webpackChunkName: "usersettings" */ '@/views/Settings')
+  },
 ]
 
 const router = createRouter({
