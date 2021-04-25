@@ -3,8 +3,7 @@
     <NavBar />
     <!-- think we still want the navbar here -->
         <h3 style="text-align:center;color:gray;font-size:24px"> welcome to BECS, the #1 desitnation for college information</h3>
-        <Welcome />
-
+        <!--// <Welcome />l want the navbar here -->
         <main>
         <router-view/>
         </main>
@@ -13,12 +12,12 @@
 
 <script>
 import NavBar from '@/components/NavBar'
-import Welcome from '@/views/Welcome'
+// import Welcome from '@/views/Welcome' -->
 
 export default {
     name: 'app',
-    components: {Welcome, NavBar},
-// removed NavBar from components
+    components: {NavBar},
+    //Welcome
     created() {
         this.$store.dispatch('updateSubscribedSubvues')
     }
@@ -37,6 +36,6 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: yellow;
+    background-color: gray;
 }
 </style>
