@@ -39,7 +39,7 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #779FA1;
+    background-color: #4B284F;
 }
 h2 {
     text-align:center;
