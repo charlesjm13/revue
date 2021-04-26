@@ -56,7 +56,7 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
 
-  width: 100%;
+  width: 500px;
   height: calc(100vh - 49px);
   position: relative;
 

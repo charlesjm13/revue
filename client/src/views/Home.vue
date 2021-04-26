@@ -1,10 +1,11 @@
 <template lang="html">
   <div class="home container">
-    <div class = "txtcenter">
+    <div class = "txtcenter" style="text-align:center;">
       <h1>WELCOME TO BECS!</h1>    
       <h2>To know your place better</h2>
     </div>
-    <div class = "idk">
+    <Welcome />
+    <div class = "idk" style="padding-top: 20px;">
       <img  src= "/assets/image3.jpg" width="800" height="400">
      
     </div>
@@ -30,13 +31,14 @@
 
 <script>
 // import PostPreview from '@/components/PostPreview'
-import PostsService from "@/services/PostsService";
+import PostsService from "@/services/PostsService"
+import Welcome from '@/views/Welcome'
 // import CreateButton from '@/components/CreateButton'
 
 export default {
   name: "home",
 
-  // components: { PostPreview, CreateButton },
+  components: { Welcome },
 
   data() {
     return {
