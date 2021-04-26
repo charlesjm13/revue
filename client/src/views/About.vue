@@ -24,6 +24,6 @@ export default {
 .img{
   display:block;
   margin: auto;
-  width: 65%;
+  text-align:center;
 }
 </style>
