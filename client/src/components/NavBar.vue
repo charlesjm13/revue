@@ -38,8 +38,8 @@ export default {
 <style scoped lang="css">
 nav {
   overflow: hidden;
-  background-color: #212C2E;
-  font-family: Verdana;
+  background-color: #88498F;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 nav a {

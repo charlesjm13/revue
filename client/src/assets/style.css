@@ -8,7 +8,7 @@ html, body {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 
-    font-family: 'Verdana', sans-serif;
+    font-family: 'Courier New', sans-serif;
 }
 
 a {
@@ -26,7 +26,7 @@ a {
 }
 
 p{
-    color: rgb(33,44,46);
+    color: rgb(240,234,214);
 }
 
 .button {
