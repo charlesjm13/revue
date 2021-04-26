@@ -1,19 +1,25 @@
 <template lang="html">
   <div class="ratings" style="background: #779FA1; width: 50%; margin:auto;">
     <div>
-      <form>
-        <select v-model="ratingType">
-          <option value="" disabled selected>Select A Rating Type</option>
-          <option>Course Rating</option>
-          <option>College Rating</option>
-        </select>
+      <br>
+      <div>
+        <Stars></Stars>
         <br>
-      </form>
-      <Stars></Stars>
+        How would you rate this course?
+      </div>
+      <br>
       <form>
         <label for="coursePos" style="float:left; padding-bottom: 25px; padding-top: 5px; padding-left: 20px;">What did you like most about this course?:</label>
         <input name="coursePos" type="text" v-model="coursePos">
+        <br>
+        <br>
+        <label for="courseNeg" style="float:left; padding-bottom: 25px; padding-top: 5px; padding-left: 20px;">What do you think could be improved about this course?:</label>
+        <input name="courseNeg" type="text" v-model="courseNeg">
       </form>
+      <br>
+      <button>Submit A Review</button>
+      <br>
+      <br>
     </div>
   </div>
 </template>
@@ -27,7 +33,8 @@ export default {
     data() {
       return {
         ratingType: '',
-        coursePos: ''  
+        coursePos: '',
+        courseNeg: ''  
       } 
     }
 }
