@@ -1,4 +1,5 @@
 <template lang="html">
+<<<<<<< HEAD
   <div class="home container">
     <div class = "txtcenter">
       <h1>WELCOME TO BECS!</h1>    
@@ -11,6 +12,11 @@
   
 
     <!-- <PostPreview v-for="post in posts" :key="post.id" :post="post">
+=======
+  <div class="home container" style="background: #564154">
+    <h1 style="color:#E0CBA8">Recent Posts</h1>
+    <PostPreview v-for="post in posts" :key="post.id" :post="post">
+>>>>>>> shahm
       {{ post.title }}
     </PostPreview> -->
 
@@ -18,12 +24,19 @@
   </div>
 </template>
 
+<<<<<<< HEAD
 
 <script>
 // import PostPreview from '@/components/PostPreview'
 import PostsService from "@/services/PostsService";
 // import CreateButton from '@/components/CreateButton'
 
+=======
+<script> 
+import PostPreview from '@/components/PostPreview'
+import PostsService from '@/services/PostsService'
+import CreateButton from '@/components/CreateButton'
+>>>>>>> shahm
 export default {
   name: "home",
 
@@ -36,6 +49,7 @@ export default {
   },
 
   mounted() {
+<<<<<<< HEAD
     PostsService.index().then((response) => {
       this.posts = response.data;
     });
@@ -78,3 +92,12 @@ body{
 }
 </style>
 
+=======
+    PostsService.index()
+      .then(response => {
+        this.posts = response.data
+      })
+  }
+}
+</script>
+>>>>>>> shahm

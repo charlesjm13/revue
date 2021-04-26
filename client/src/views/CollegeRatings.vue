@@ -1,9 +1,17 @@
 <template lang="html">
+<<<<<<< HEAD
   <div class="home container" style="margin: auto; text-align: center;">
     <h1>College Ratings</h1>
     <div>
     <select>
       <option value="" disabled selected>Select A School</option>
+=======
+  <div class="home container" style="background: #779FA1">
+    <h1 style="color:#E0CBA8">College Ratings</h1>
+    <div>
+    <select>
+      <option>Select A School</option>Welcome to BECS, the #1 desitnation for college information
+>>>>>>> shahm
       <option>Knox College</option>
     </select>
     </div>
@@ -28,6 +36,6 @@ export default {
 
 <style lang="css">
 select {
-  background: #faf7f2;
+  background: #564154;
 }
 </style>

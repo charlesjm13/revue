@@ -26,6 +26,6 @@ export default {
 
 <style lang="css">
 select {
-  background: #faf7f2;
+  background: #564154;
 }
 </style>
