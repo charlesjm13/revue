@@ -1,8 +1,8 @@
 <template>
     <header>
-        <h3 style="text-align:center;color:yellow">{{ title }}</h3>
-        <SignUpButton text="Sign Up" color="purple" />
-        <SignInButton text="Sign In" color="orange" />
+       <!-- <h3 style="text-align:center;color:yellow">{{ title }}</h3> -->
+        <SignUpButton text="Sign Up" color="black" />
+        <SignInButton text="Sign In" color="white" />
     </header>
 </template>
 
