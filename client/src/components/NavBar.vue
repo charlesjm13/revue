@@ -1,14 +1,11 @@
 <template lang="html">
   <nav>
-<<<<<<< HEAD
-    <router-link v-if="!$store.state.isUserLoggedIn" class="title" :to="{ name: 'Home', params: {} }">BECS</router-link>
+    <router-link v-if="!$store.state.isUserLoggedIn" class="title" :to="{ name: 'Home', params: {} }">💻</router-link>
     <router-link v-if="!$store.state.isUserLoggedIn" class="title" :to="{ name: 'About'}">About</router-link>
 
     <!-- <div class="dropdown">
-=======
     <router-link class="title" :to="{ name: 'Home', params: {} }">💻</router-link>
     <div class="dropdown">
->>>>>>> shahm
       <button class="dropbtn">Subvues</button>
       <div class="dropdown-content">
         <router-link
@@ -49,13 +46,8 @@ export default {
 <style scoped lang="css">
 nav {
   overflow: hidden;
-<<<<<<< HEAD
-  background-color:#779fA1;
-  font-family: Arial;
-=======
   background-color: #88498F;
   font-family: 'Courier New', Courier, monospace;
->>>>>>> shahm
 }
 
 nav a {
@@ -72,11 +64,7 @@ nav a {
 }
 
 .create-subvue {
-<<<<<<< HEAD
-  background-color: #779FA1;
-=======
   background-color: rgb(33,44,46);
->>>>>>> shahm
   color: white !important;
 }
 
@@ -101,11 +89,7 @@ nav a {
 }
 
 nav a:hover, .dropdown:hover .dropbtn {
-<<<<<<< HEAD
-  background-color: #E0CBA8;
-=======
   background-color: #212C2E;
->>>>>>> shahm
 }
 
 .dropdown-content {

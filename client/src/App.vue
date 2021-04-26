@@ -1,18 +1,12 @@
 <template>
     <div id="app">
     <NavBar />
-<<<<<<< HEAD
-        <h2 style="font-family:verdana;"> Welcome to BECS, the #1 destination for college information</h2>
-        <Welcome />
-    -->
-=======
         <h2> Welcome to BECS
         </h2>
         <h2> Get to know your place
         </h2>
        <!-- <Welcome /> -->
 
->>>>>>> shahm
         <main>
         
         <router-view/>
@@ -26,13 +20,8 @@ import NavBar from '@/components/NavBar'
 
 export default {
     name: 'app',
-<<<<<<< HEAD
-    components: {/*Welcome,*/ NavBar},
-// removed NavBar from components
-=======
     components: {NavBar},
 // removed Welcome from components
->>>>>>> shahm
     created() {
         this.$store.dispatch('updateSubscribedSubvues')
     }
