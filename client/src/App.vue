@@ -1,14 +1,10 @@
 <template>
     <div id="app">
     <NavBar />
-        <h2> Welcome to BECS
-        </h2>
-        <h2> Get to know your place
-        </h2>
-       <!-- <Welcome /> -->
-
+    <!-- think we still want the navbar here -->
+        <h3 style="text-align:center;color:Cornsilk;font-size:24px"> welcome to BECS, the #1 destination for college information</h3>
+        <Welcome />
         <main>
-        
         <router-view/>
         </main>
     </div>
@@ -16,11 +12,11 @@
 
 <script>
 import NavBar from '@/components/NavBar'
-//import Welcome from '@/views/Welcome'
+import Welcome from '@/views/Welcome'
 
 export default {
     name: 'app',
-    components: {NavBar},
+    components: {NavBar, Welcome},
 // removed Welcome from components
     created() {
         this.$store.dispatch('updateSubscribedSubvues')
