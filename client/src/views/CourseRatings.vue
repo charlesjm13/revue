@@ -6,17 +6,17 @@
       <option>Knox College</option>
     </select>
     <div style="margin: auto; text-align:center; padding-top: 20px;">
-    <Ratings></Ratings>
+    <CourseRatings></CourseRatings>
     </div>
   </div>
 </template>
 
 <script>
-import Ratings from  '@/components/Ratings'
+import CourseRatings from  '@/components/CourseRatings'
 
 export default {
   name: 'home',
-  components: {Ratings},
+  components: {CourseRatings},
   data() {
     return {
     }

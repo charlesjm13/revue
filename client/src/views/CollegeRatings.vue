@@ -8,17 +8,17 @@
     </select>
     </div>
     <div style="margin: auto; text-align:center; padding-top: 20px;">
-    <Ratings></Ratings>
+    <CollegeRatings></CollegeRatings>
     </div>
   </div>
 </template>
 
 <script>
-import Ratings from  '@/components/Ratings'
+import CollegeRatings from  '@/components/CollegeRatings'
 
 export default {
   name: 'home',
-  components: {Ratings},
+  components: {CollegeRatings},
   data() {
     return {
     }
