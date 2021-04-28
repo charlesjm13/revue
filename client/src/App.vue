@@ -1,12 +1,7 @@
 <template>
     <div id="app">
     <NavBar />
-    <!-- think we still want the navbar here 
-        <h3 style="text-align:center;color:gray;font-size:24px"> welcome to BECS, the #1 desitnation for college information</h3>
-        <Welcome />
-    -->
         <main>
-        
         <router-view/>
         </main>
     </div>
@@ -14,12 +9,10 @@
 
 <script>
 import NavBar from '@/components/NavBar'
-//import Welcome from '@/views/Welcome'
 
 export default {
     name: 'app',
-    components: {/*Welcome,*/ NavBar},
-// removed NavBar from components
+    components: {NavBar},
     created() {
         this.$store.dispatch('updateSubscribedSubvues')
     }
@@ -29,8 +22,24 @@ export default {
 
 <style>
 #app {
-    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    font-family: 'Courier New', Courier, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    align-items: center;
+    text-align: left;
+    display: flex;
+    height: 100%;
+    min-height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #FAF7F2;
+}
+h2 {
+    text-align:center;
+    color:black;
+    font-size:28px;
+    font-family:"Verdana", sans-serif;
+    font-weight: bold;
 }
 </style>
