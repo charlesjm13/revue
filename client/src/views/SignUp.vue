@@ -57,10 +57,10 @@
               <button @click="removeFromTags(tag)" style="padding: 5px 5px 5px 0px;">Remove </button>
               <label>&nbsp; {{tag}}</label>
           </div>
-          </div>
-
-          <input class="button" type="submit" value="Sign Up">
-      </form>
+        </div>
+      </div>
+      <input class="button" type="submit" value="Sign Up">
+    </form>
   </div>
 </template>
 
