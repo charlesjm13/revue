@@ -1,27 +1,49 @@
 <template lang="html">
+  <div class="home container">
+    <div class = "txtcenter" style="text-align:center;">
+      <h1>WELCOME TO BECS!</h1>    
+      <h2>To know your place better</h2>
+    </div>
+    <Welcome />
+    <div class = "idk" style="padding-top: 20px;">
+      <img  src= "./assets/image3.jpg" width="800" height="400">
+     
+    </div>
+  
+
+    <!-- <PostPreview v-for="post in posts" :key="post.id" :post="post">
+=======
+  <div class="home container" style="background: #564154">
+    <h1 style="color:#E0CBA8">Recent Posts</h1>
+=======
   <div class="home container" style="background: #779FA1">
     <h1 style="color:#F0EAD6">Recent Posts</h1>
+>>>>>>> shahm
     <PostPreview v-for="post in posts" :key="post.id" :post="post">
+>>>>>>> shahm
       {{ post.title }}
-    </PostPreview>
+    </PostPreview> -->
 
-    <CreateButton></CreateButton>
+    <!-- <CreateButton></CreateButton> -->
   </div>
 </template>
 
-<script> 
-import PostPreview from '@/components/PostPreview'
-import PostsService from '@/services/PostsService'
-import CreateButton from '@/components/CreateButton'
-export default {
-  name: 'home',
 
-  components: { PostPreview, CreateButton },
+<script>
+// import PostPreview from '@/components/PostPreview'
+import PostsService from "@/services/PostsService"
+import Welcome from '@/views/Welcome'
+// import CreateButton from '@/components/CreateButton'
+
+export default {
+  name: "home",
+
+  components: { Welcome },
 
   data() {
     return {
-      posts: null
-    }
+      posts: null,
+    };
   },
 
   mounted() {

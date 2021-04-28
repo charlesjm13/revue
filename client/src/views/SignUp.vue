@@ -3,8 +3,8 @@
     <form @submit.prevent="signUp">
       <h1>Sign Up</h1>
       <p class="error" :class="{ 'deprecated-error' : deprecatedError }">{{ error }}</p>
-      <input type="text" v-model="firstName" placeholder="First Name">
-      <input type="text" v-model="lasttName" placeholder="Last Name">
+      <input type="text" v-model="firstname" placeholder="First Name">
+      <input type="text" v-model="lasttname" placeholder="Last Name">
       <input type="text" v-model="username" placeholder="Username" ref="username">
       <input type="email" v-model="email" placeholder="E-Mail">
       <input type="password" v-model="password" placeholder="Password">
@@ -13,19 +13,19 @@
       
         <label for="user-types" style="float:left; padding-top: 5px; padding-left: 20px;">User Type:</label>
       <div style="padding-bottom: 5px; padding-right: 20px;">
-          <select name="user-types" v-model="userType" style="float:right; padding: 5px 0px 5px 0px;">
+          <select name="user-types" v-model="usertype" style="float:right; padding: 5px 0px 5px 0px;">
            <option value="" disabled selected>Enter user type</option>
            <option value="Current Student"> Current Student </option>
            <option value="Prospective Student"> Prospective Student </option>
           </select>
       </div>
       <br>
-      <div v-if="userType === 'Current Student'" style="padding-top: 20px">
+      <div v-if="usertype === 'Current Student'" style="padding-top: 20px">
         <label for="current-school" style="float:left; padding-bottom: 25px; padding-top: 5px; padding-left: 20px;">Current School:</label>
          <div style="padding-right: 20px;">
-          <select name="current-school" v-model="userSchool" style="float:right; padding: 5px 28px 5px 0px;">
+          <select name="current-school" v-model="userschool" style="float:right; padding: 5px 28px 5px 0px;">
            <option value="" disabled selected>Select a school</option>
-           <option value="Current Student"> Knox College </option>
+           <option value="Knox College"> Knox College </option>
           </select>
           </div>
       </div>
@@ -44,14 +44,14 @@ export default {
     return {
       error: '',
       deprecatedError: false,
-      firstName: '',
-      lastName: '',
+      firstname: '',
+      lastname: '',
       username: '',
       password: '',
       passwordRepeat: '',
       email: '',
-      userType: '',
-      userSchool: ''
+      usertype: '',
+      userschool: ''
     }
   },
 
@@ -128,12 +128,11 @@ export default {
 
 <style scoped lang="css">
 .signup {
-  background: #212c2e;
   background-image: url(/static/newsletter-login.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100%;
+  width: 500px;
   height: calc(100vh - 49px);
   position: relative;
 
