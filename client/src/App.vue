@@ -26,6 +26,7 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     align-items: center;
+    text-align: left;
     display: flex;
     height: 100%;
     min-height: 100%;
@@ -38,7 +39,7 @@ h2 {
     text-align:center;
     color:black;
     font-size:28px;
-    font-family:"Courier New", sans-serif;
+    font-family:"Verdana", sans-serif;
     font-weight: bold;
 }
 </style>
