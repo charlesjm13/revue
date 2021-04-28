@@ -18,7 +18,7 @@
             Dining Services
         </div>
         <br>
-        <button>Submit A Review</button>
+        <button v-if="this.$props.selectedCollege != ''">Submit A Review</button>
     </div>
   </div>
 </template>
@@ -29,10 +29,12 @@ import Stars from '@/components/Stars'
 export default {
     name: 'ratings',
     components: {Stars},
+    props: ['selectedCollege'],
     data() {
       return {
         ratingType: '',
-        coursePos: ''  
+        coursePos: '',
+        college: this.$props.selectedCollege
       } 
     }
 }
