@@ -28,14 +28,15 @@ export default {
     align-items: center;
     display: flex;
     height: 100%;
+    min-height: 100%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #4B284F;
+    background-color: #FAF7F2;
 }
 h2 {
     text-align:center;
-    color:#F0EAD6;
+    color:black;
     font-size:28px;
     font-family:"Courier New", sans-serif;
     font-weight: bold;

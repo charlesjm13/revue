@@ -1,6 +1,6 @@
 <template>
     <header style="margin: auto; text-align:center;">
-        <SignUpButton style="font-size: 20px;" text="Sign Up" color="#FF6542" />
+        <SignUpButton style="font-size: 20px;" text="Sign Up" color="#779FA1" />
         <SignInButton style="font-size: 20px;" text="Sign In" color="#88498F" />
     </header>
 </template>
