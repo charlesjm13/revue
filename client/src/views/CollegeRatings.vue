@@ -1,26 +1,27 @@
 <template lang="html">
-  <div class="home container" style="background: #779FA1">
+  <div class="home container" style="margin: auto; text-align: center;">
     <h1>College Ratings</h1>
     <div>
-    <select>
-      <option>Select A School</option>
-      <option>Knox College</option>
+    <select v-model="selectedCollege">
+      <option value="" disabled selected>Select A School</option>
+      <option value="Knox College">Knox College</option>
     </select>
     </div>
-    <div style="margin: auto; text-align:center;">
-    <Ratings></Ratings>
+    <div style="margin: auto; text-align:center; padding-top: 20px;">
+    <CollegeRatings :selectedCollege="selectedCollege"></CollegeRatings>
     </div>
   </div>
 </template>
 
 <script>
-import Ratings from  '@/components/Ratings'
+import CollegeRatings from  '@/components/CollegeRatings'
 
 export default {
   name: 'home',
-  components: {Ratings},
+  components: {CollegeRatings},
   data() {
     return {
+      selectedCollege: ''
     }
   }
 }
@@ -28,6 +29,6 @@ export default {
 
 <style lang="css">
 select {
-  background: #faf7f2;
+  background: #FAF7F2;
 }
 </style>

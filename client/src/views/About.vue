@@ -4,7 +4,7 @@
       <h1>ABOUT US</h1>
       <h2>We are a team of college students who want to help prospective students engage more with the community that they are going into.</h2>
     </div>
-    <div class="img">
+    <div class="img" style="margin:auto;">
       <img src="/assets/about.jpg" width="800" height="600" />
     </div>
   </div>
@@ -24,6 +24,6 @@ export default {
 .img{
   display:block;
   margin: auto;
-  width:50%;
+  text-align:center;
 }
 </style>

@@ -1,16 +1,26 @@
 <template lang="html">
   <div class="home container">
-    <div class = "txtcenter">
+    <div class = "txtcenter" style="text-align:center;">
       <h1>WELCOME TO BECS!</h1>    
       <h2>To know your place better</h2>
     </div>
-    <div class = "idk">
+    <Welcome />
+    <div class = "idk" style="padding-top: 20px;">
       <img  src= "/assets/image3.jpg" width="800" height="400">
      
     </div>
   
 
     <!-- <PostPreview v-for="post in posts" :key="post.id" :post="post">
+=======
+  <div class="home container" style="background: #564154">
+    <h1 style="color:#E0CBA8">Recent Posts</h1>
+=======
+  <div class="home container" style="background: #779FA1">
+    <h1 style="color:#F0EAD6">Recent Posts</h1>
+>>>>>>> shahm
+    <PostPreview v-for="post in posts" :key="post.id" :post="post">
+>>>>>>> shahm
       {{ post.title }}
     </PostPreview> -->
 
@@ -21,13 +31,14 @@
 
 <script>
 // import PostPreview from '@/components/PostPreview'
-import PostsService from "@/services/PostsService";
+import PostsService from "@/services/PostsService"
+import Welcome from '@/views/Welcome'
 // import CreateButton from '@/components/CreateButton'
 
 export default {
   name: "home",
 
-  // components: { PostPreview, CreateButton },
+  components: { Welcome },
 
   data() {
     return {
@@ -36,45 +47,10 @@ export default {
   },
 
   mounted() {
-    PostsService.index().then((response) => {
-      this.posts = response.data;
-    });
-  },
-};
+    PostsService.index()
+      .then(response => {
+        this.posts = response.data
+      })
+  }
+}
 </script>
-
-<style lang="css">
-@import url('https://fonts.googleleapis.com/css2?family=Poppins:wght@300;400&display=swap');
-body{
-  font-family: 'Poppins', sans-serif;
-}
- /* #app{ 
-  width: 9000px;
-  height: 100vh;
-  margin: auto;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: black;
-} */
-
-.txtcenter {
-  text-align: center;
-}
-
-.idk {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 57%;
-}
-.img{
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
-  width:10%;
-}
-</style>
-

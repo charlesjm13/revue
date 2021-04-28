@@ -25,7 +25,7 @@
          <div style="padding-right: 20px;">
           <select name="current-school" v-model="userschool" style="float:right; padding: 5px 28px 5px 0px;">
            <option value="" disabled selected>Select a school</option>
-           <option value="Current Student"> Knox College </option>
+           <option value="Knox College"> Knox College </option>
           </select>
           </div>
       </div>
@@ -128,13 +128,11 @@ export default {
 
 <style scoped lang="css">
 .signup {
-  background: #779FA1;
   background-image: url(/static/newsletter-login.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-
-  width: 100%;
+  width: 500px;
   height: calc(100vh - 49px);
   position: relative;
 
@@ -164,7 +162,7 @@ input {
   background: #FAF7F2;
   padding: 15px;
   text-align: center;
-  margin: 20px 0;
+  margin: 0px 0;
 
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
