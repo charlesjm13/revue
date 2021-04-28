@@ -1,6 +1,10 @@
 <template>
     <div id="app">
     <NavBar />
+        <h2> Welcome to BECS
+        </h2>
+       <Welcome />
+
         <main>
         <router-view/>
         </main>
@@ -9,10 +13,12 @@
 
 <script>
 import NavBar from '@/components/NavBar'
+import Welcome from '@/views/Welcome'
 
 export default {
     name: 'app',
-    components: {NavBar},
+    components: {NavBar, Welcome},
+// removed Welcome from components
     created() {
         this.$store.dispatch('updateSubscribedSubvues')
     }
@@ -26,6 +32,7 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     align-items: center;
+    text-align: left;
     display: flex;
     height: 100%;
     min-height: 100%;
@@ -38,7 +45,7 @@ h2 {
     text-align:center;
     color:black;
     font-size:28px;
-    font-family:"Courier New", sans-serif;
+    font-family:"Verdana", sans-serif;
     font-weight: bold;
 }
 </style>
