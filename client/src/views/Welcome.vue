@@ -3,7 +3,6 @@
         <SignUpButton style="font-size: 20px;" text="Sign Up" color="#779FA1" />
         <SignInButton style="font-size: 20px;" text="Sign In" color="#88498F" />
     </header>
-    </div>
 </template>
 
 <script>

@@ -1,10 +1,6 @@
 <template>
     <div id="app">
     <NavBar />
-        <h2> Welcome to BECS
-        </h2>
-       <Welcome />
-
         <main>
         <router-view/>
         </main>
@@ -13,12 +9,10 @@
 
 <script>
 import NavBar from '@/components/NavBar'
-import Welcome from '@/views/Welcome'
 
 export default {
     name: 'app',
-    components: {NavBar, Welcome},
-// removed Welcome from components
+    components: {NavBar},
     created() {
         this.$store.dispatch('updateSubscribedSubvues')
     }
