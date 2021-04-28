@@ -2,13 +2,13 @@
   <div class="home container" style="margin: auto; text-align: center;">
     <h1>College Ratings</h1>
     <div>
-    <select>
+    <select v-model="selectedCollege">
       <option value="" disabled selected>Select A School</option>
-      <option>Knox College</option>
+      <option value="Knox College">Knox College</option>
     </select>
     </div>
     <div style="margin: auto; text-align:center; padding-top: 20px;">
-    <CollegeRatings></CollegeRatings>
+    <CollegeRatings :selectedCollege="selectedCollege"></CollegeRatings>
     </div>
   </div>
 </template>
@@ -21,6 +21,7 @@ export default {
   components: {CollegeRatings},
   data() {
     return {
+      selectedCollege: ''
     }
   }
 }
