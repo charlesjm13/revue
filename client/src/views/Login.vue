@@ -50,7 +50,6 @@ export default {
 
 <style scoped lang="css">
 .login {
-  background: #212c2e;
   background-image: url(/static/newsletter-login.jpg);
   background-position: center;
   background-size: cover;
