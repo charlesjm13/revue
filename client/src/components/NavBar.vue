@@ -1,9 +1,11 @@
 <template lang="html">
   <nav>
-    <router-link v-if="!$store.state.isUserLoggedIn" class="title" :to="{ name: 'Home', params: {} }">BECS</router-link>
+    <router-link v-if="!$store.state.isUserLoggedIn" class="title" :to="{ name: 'Home', params: {} }">💻</router-link>
     <router-link v-if="!$store.state.isUserLoggedIn" class="title" :to="{ name: 'About'}">About</router-link>
 
     <!-- <div class="dropdown">
+    <router-link class="title" :to="{ name: 'Home', params: {} }">💻</router-link>
+    <div class="dropdown">
       <button class="dropbtn">Subvues</button>
       <div class="dropdown-content">
         <router-link
@@ -14,16 +16,22 @@
         <router-link class="create-subvue" :to="{ name: 'CreateSubvue' }">Create a Subvue</router-link>
       </div>
     </div> -->
-
+    <router-link v-if="$store.state.isUserLoggedIn" style="float:left" :to="{ name: 'Landing', params: {} }">Home</router-link>
     <router-link v-if="$store.state.isUserLoggedIn" style="float:left" :to="{ name: 'QnA', params: {} }">QnA</router-link>
     <router-link v-if="$store.state.isUserLoggedIn" style="float:left" :to="{ name: 'CourseRatings', params: {} }">Course Ratings</router-link>
     <router-link v-if="$store.state.isUserLoggedIn" style="float:left" :to="{ name: 'CollegeRatings', params: {} }">College Ratings</router-link>
+    <!--
     <router-link v-if="!$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'SignUp', params: {} }">Sign Up</router-link>
     <router-link v-if="!$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'Login', params: {} }">Login</router-link>
-     
+    --> 
     <a v-if="$store.state.isUserLoggedIn" style="float:right" @click="logout()">Logout</a>
+<<<<<<< HEAD
     <router-link v-if="$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'Profile', params: { username: $store.state.user.username } }">{{ $store.state.user.username }}</router-link>
     <router-link v-if="$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'Settings', params: { username: $store.state.user.username } }">Settings</router-link>
+=======
+    <router-link v-if="$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'User', params: { username: $store.state.user.username } }">{{ $store.state.user.username }}</router-link>
+    <router-link v-if="$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'Settings', params: {username: $store.state.user.username} }">Settings</router-link>
+>>>>>>> master
   </nav>
 </template>
 
@@ -44,8 +52,8 @@ export default {
 <style scoped lang="css">
 nav {
   overflow: hidden;
-  background-color:#779fA1;
-  font-family: Arial;
+  background-color: #88498F;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 nav a {
@@ -62,12 +70,12 @@ nav a {
 }
 
 .create-subvue {
-  background-color: #779FA1;
+  background-color: rgb(33,44,46);
   color: white !important;
 }
 
 .create-subvue:hover {
-  background-color: rgb(7, 44, 45) !important;
+  background-color: rgb(240, 234, 214) !important;
 }
 
 .dropdown {
@@ -87,13 +95,13 @@ nav a {
 }
 
 nav a:hover, .dropdown:hover .dropbtn {
-  background-color: #E0CBA8;
+  background-color: #212C2E;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #f0ead6;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -109,7 +117,7 @@ nav a:hover, .dropdown:hover .dropbtn {
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #f0ead6;
 }
 
 .dropdown:hover .dropdown-content {

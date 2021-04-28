@@ -34,7 +34,7 @@ export default {
         this.$store.dispatch('setToken', response.data.token)
         this.$store.dispatch('setUser', response.data.user)
         console.log(response.data.user)
-        this.$router.push({name: 'Home'})
+        this.$router.push({name: 'Landing'})
       })
       .catch(e => {
         this.error = e.response.data.error
@@ -50,13 +50,12 @@ export default {
 
 <style scoped lang="css">
 .login {
-  background: #779FA1;
   background-image: url(/static/newsletter-login.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 
-  width: 100%;
+  width: 500px;
   height: calc(100vh - 49px);
   position: relative;
 
