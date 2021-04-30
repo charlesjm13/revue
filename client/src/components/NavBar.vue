@@ -1,5 +1,9 @@
 <template lang="html">
   <nav>
+    <router-link v-if="!$store.state.isUserLoggedIn" class="title" :to="{ name: 'Home', params: {} }">💻</router-link>
+    <router-link v-if="!$store.state.isUserLoggedIn" class="title" :to="{ name: 'About'}">About</router-link>
+
+    <!-- <div class="dropdown">
     <router-link class="title" :to="{ name: 'Home', params: {} }">💻</router-link>
     <div class="dropdown">
       <button class="dropbtn">Subvues</button>
@@ -11,13 +15,18 @@
           >{{ subvue.name }}</router-link>
         <router-link class="create-subvue" :to="{ name: 'CreateSubvue' }">Create a Subvue</router-link>
       </div>
-    </div>
-
+    </div> -->
+    <router-link v-if="$store.state.isUserLoggedIn" style="float:left" :to="{ name: 'Landing', params: {} }">Home</router-link>
+    <router-link v-if="$store.state.isUserLoggedIn" style="float:left" :to="{ name: 'QnA', params: {} }">QnA</router-link>
+    <router-link v-if="$store.state.isUserLoggedIn" style="float:left" :to="{ name: 'CourseRatings', params: {} }">Course Ratings</router-link>
+    <router-link v-if="$store.state.isUserLoggedIn" style="float:left" :to="{ name: 'CollegeRatings', params: {} }">College Ratings</router-link>
+    <!--
     <router-link v-if="!$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'SignUp', params: {} }">Sign Up</router-link>
     <router-link v-if="!$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'Login', params: {} }">Login</router-link>
-
+    --> 
     <a v-if="$store.state.isUserLoggedIn" style="float:right" @click="logout()">Logout</a>
     <router-link v-if="$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'User', params: { username: $store.state.user.username } }">{{ $store.state.user.username }}</router-link>
+    <router-link v-if="$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'Settings', params: {username: $store.state.user.username} }">Settings</router-link>
   </nav>
 </template>
 

@@ -1,21 +1,27 @@
 <template lang="html">
-  <div class="home container" style="background: #779FA1">
-    <h1 style="color:#212c2e">College Ratings</h1>
+  <div class="home-container" style="margin: auto; text-align: center; padding: 0px 200px 150px 200px;">
+    <h1>College Ratings</h1>
     <div>
-    <select>
-      <option>Select A School</option>Welcome to BECS, the #1 desitnation for college information
-      <option>Knox College</option>
+    <select v-model="selectedCollege">
+      <option value="" disabled selected>Select A School</option>
+      <option value="Knox College">Knox College</option>
     </select>
+    </div>
+    <div style="margin: auto; text-align:center; padding-top: 20px;">
+    <CollegeRatings :selectedCollege="selectedCollege"></CollegeRatings>
     </div>
   </div>
 </template>
 
 <script>
+import CollegeRatings from  '@/components/CollegeRatings'
+
 export default {
   name: 'home',
-  components: {},
+  components: {CollegeRatings},
   data() {
     return {
+      selectedCollege: ''
     }
   }
 }
@@ -23,6 +29,9 @@ export default {
 
 <style lang="css">
 select {
-  background: #212c2e;
+  background: #FAF7F2;
+}
+.home-container {
+  background: #779FA1;
 }
 </style>
