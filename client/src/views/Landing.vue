@@ -27,7 +27,7 @@ font-family: 'Roboto', sans-serif;
 .container{
   height: 100vh;
   width: 100%;
-  background-image: url('../../public/assets/land2.jpg');
+  /* background-image: url('../../public/assets/land2.jpg'); */
   background-position: center;
   background-size: cover;
   
