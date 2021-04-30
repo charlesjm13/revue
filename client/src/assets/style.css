@@ -1,6 +1,9 @@
 html, body {
     margin: 0;
     padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #FAF7F2;
 }
 
 * {
@@ -8,7 +11,7 @@ html, body {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 
-    font-family: 'Courier New', sans-serif;
+    font-family: 'Verdana', sans-serif;
 }
 
 a {
@@ -22,7 +25,8 @@ a {
 }
 
 .container {
-    padding: 10px 20px;
+   width: 100%;
+   padding: 20px 20px
 }
 
 p{

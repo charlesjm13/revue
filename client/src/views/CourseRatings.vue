@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="home container" style="margin: auto; text-align: center;">
+  <div class="home-container" style="margin: auto; text-align: center;">
     <h1>Course Ratings</h1>
     <select v-model="selectedCollege">
       <option value="" disabled selected>Select A School</option>
@@ -55,8 +55,11 @@
       <option value="Statistics">Statistics</option>
       <option value="Theatre">Theatre</option>
     </select>
-    <div style="margin: auto; text-align:center; padding-top: 20px;">
-    <CourseRatings :selectedCollege="selectedCollege"></CourseRatings>
+    <br>
+    <br>
+    <input type="text" placeholder="Course Number..." pattern ="\d*" maxlength="3" minlength="3" v-if="courseField != ''" v-model="courseNumber">
+    <div style="margin: auto; text-align:center; padding-top: 10px;">
+    <CourseRatings :courseNumber="courseNumber"></CourseRatings>
     </div>
   </div>
 </template>
@@ -70,14 +73,18 @@ export default {
   data() {
     return {
       selectedCollege: '',
-      courseField: ''
+      courseField: '',
+      courseNumber: ''
     }
   }
 }
 </script>
 
 <style lang="css">
-select {
-  background: #564154;
+select, input {
+  background: #FAF7F2;
+}
+.home-container {
+  background: #779FA1;
 }
 </style>

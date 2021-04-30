@@ -17,7 +17,7 @@
         <input name="courseNeg" type="text" v-model="courseNeg">
       </form>
       <br>
-      <button v-if="this.$props.selectedCollege != ''">Submit A Review</button>
+      <button v-if="this.$props.courseNumber.length == 3">Submit A Review</button>
       <br>
       <br>
     </div>
@@ -30,13 +30,13 @@ import Stars from '@/components/Stars'
 export default {
     name: 'ratings',
     components: {Stars},
-    props: ['selectedCollege'],
+    props: ['courseNumber'],
     data() {
       return {
         ratingType: '',
         coursePos: '',
         courseNeg: '',
-        college: this.$props.selectedCollege
+        cNumber: this.$props.courseNumber
       } 
     }
 }

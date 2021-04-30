@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="home container" style="margin: auto; text-align: center;">
+  <div class="home-container" style="margin: auto; text-align: center; padding: 0px 200px 150px 200px;">
     <h1>College Ratings</h1>
     <div>
     <select v-model="selectedCollege">
@@ -29,6 +29,9 @@ export default {
 
 <style lang="css">
 select {
-  background: #564154;
+  background: #FAF7F2;
+}
+.home-container {
+  background: #779FA1;
 }
 </style>
