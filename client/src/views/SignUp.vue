@@ -38,26 +38,6 @@
                   </select>
               </div>
           </div><br />
-          <label style="float:left; padding-bottom: 25px; padding-top: 5px; padding-left: 20px;">Tags:</label>
-          <div style="padding-bottom: 5px; padding-right: 20px;">
-              <select name="user-types" @change="addToTags($event)" v-model="usertags" style="float:right; padding: 5px 0px 5px 0px;">
-                  <option value="" disabled selected>Pick tags that relate to your interest</option>
-                  <!--<option v-for="tag in availableTags" :key="tag"></option>-->
-                  <option value="Math">Math</option>
-                  <option value="Science">Science</option>
-                  <option value="Literature">Literature</option>
-                  <option value="Art">Art</option>
-                  <option value="Business">Business</option>
-              </select><br /><br />
-          </div>
-
-          <div v-if="returnVal() > 0">
-          <label><strong><u>Your tags:</u></strong></label>
-          <div v-for="tag in chosenTags" :key="tag">
-              <button @click="removeFromTags(tag)" style="padding: 5px 5px 5px 0px;">Remove </button>
-              <label>&nbsp; {{tag}}</label>
-          </div>
-        </div>
       </div>
       <input class="button" type="submit" value="Sign Up">
     </form>
@@ -81,11 +61,7 @@ export default {
       passwordRepeat: '',
       email: '',
       usertype: '',
-      userschool: '',
-      usertags: '',
-      chosenTags: [],
-      val: 0,
-      availableTags: ["Math", "Science", "Reading", "Art", "Business"]
+        userschool: ''
     }
   },
 
@@ -111,20 +87,6 @@ export default {
           this.error = e.response.data.error;
         })
       }
-      },
-
-      addToTags(event) {
-          this.chosenTags.push(event.target.value)
-          this.val = this.val + 1
-      },
-
-      removeFromTags(event){
-          this.chosenTags.splice(this.chosenTags.indexOf(event), 1)
-          this.val = this.val - 1
-      },
-
-      returnVal() {
-          return this.val
       }
   },
 
