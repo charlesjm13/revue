@@ -23,7 +23,7 @@ font-family: 'Roboto', sans-serif;
 .homecontainer{
   min-height: 100vh;
   width: 1400px;
-  background-image: url(../../public/assets/books.jpg);
+  background-image: url(./assets/books.jpg);
   background-position: center;
   background-size: cover;
   position: relative;
