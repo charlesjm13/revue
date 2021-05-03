@@ -55,6 +55,15 @@
       </div>
     </div>
 
+  <PostPreview v-for="post in posts" :key="post.id" :post="post">
+
+  <div class="home container" style="background: #564154">
+    <h1 style="color:#E0CBA8">Recent Posts</h1>
+
+  <div class="home container" style="background: #779FA1">
+    <h1 style="color:#F0EAD6">Recent Posts</h1>
+
+
     <PostPreview v-for="post in posts" :key="post.id" :post="post">
       {{ post.title }}
     </PostPreview>

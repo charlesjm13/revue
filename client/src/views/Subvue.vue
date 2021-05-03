@@ -1,4 +1,4 @@
-<!--<template lang="html">
+<<template lang="html">
   <div class="subvue">
      <div class="container">
       <h1>Recent Posts</h1>
@@ -16,7 +16,7 @@
 
 </template>-->
 
-<!-- <script>
+<script>
 import SubvueInfo from '@/components/SubvueInfo'
 import CreateButton from '@/components/CreateButton'
 import PostPreview from '@/components/PostPreview'
@@ -61,7 +61,7 @@ export default {
 }
 </script> -->
 
-<!-- <style scoped lang="css">
+<style scoped lang="css">
 .container {
     width: 80%;
     float: left;

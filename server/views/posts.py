@@ -3,7 +3,7 @@ from schema import Schema, And
 import utils
 from app import app
 from flask import jsonify, request
-# from models import Post, User, Comment, Subvue
+from models import Post, User, Comment, Subvue
 from mongoengine.errors import ValidationError
 from authorization import login_required
 
@@ -19,20 +19,20 @@ def posts_index():
 def posts_create(username: str):
     schema = Schema({
         "title": And(str, len, error="Title not specified"),
-        # "subvue": And(str, len, error="Subvue not specified"),
+        "subvue": And(str, len, error="Subvue not specified"),
         "content": And(str, len, error="Content not specified"),
     })
     form = {
         "title": request.form.get("title"),
-        # "subvue": request.form.get("subvue"),
+        "subvue": request.form.get("subvue"),
         "content": request.form.get("content")
     }
     validated = schema.validate(form)
 
-    # subvue_permalink = validated["subvue"]
-    # subvue = Subvue.objects(permalink__iexact=subvue_permalink).first()
-    # if not subvue:
-        # return jsonify({"error": f"Subvue '{subvue_permalink}' not found"}), 404
+    subvue_permalink = validated["subvue"]
+    subvue = Subvue.objects(permalink__iexact=subvue_permalink).first()
+    if not subvue:
+        return jsonify({"error": f"Subvue '{subvue_permalink}' not found"}), 404
 
     user = User.objects(username=username).first()
 
@@ -45,7 +45,7 @@ def posts_create(username: str):
 
     post = Post(
         title=validated["title"],
-        # subvue=subvue,
+        subvue=subvue,
         content=validated["content"],
         user=user,
         comments=[],
