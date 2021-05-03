@@ -13,7 +13,7 @@
           <label><strong>Reset password: &nbsp;</strong></label><!--Allows input for new password-->
           <input v-model="password" placeholder="Reset Password"><br><br>
           <label><strong>Change student type: &nbsp;</strong></label><!--Allows selection of student type-->
-          <select v-model="stype">
+         <select v-model="stype">
               <option value="" disabled selected>Student types:</option>
               <option>Prospective student</option>
               <option>Current student</option>
