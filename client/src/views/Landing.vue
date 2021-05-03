@@ -1,5 +1,5 @@
 <template>
-  <div class="homecontainer">
+  <div class="homecontainer" style="background-image: url(./assets/books.jpg);">
     <div class="txtcenter" style="color:black;">
       <h1> Hello {{ $store.state.user.username }}</h1>
     </div>
@@ -23,7 +23,6 @@ font-family: 'Roboto', sans-serif;
 .homecontainer{
   min-height: 100vh;
   width: 1400px;
-  background-image: url(./assets/books.jpg);
   background-position: center;
   background-size: cover;
   position: relative;
