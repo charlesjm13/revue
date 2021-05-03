@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="ratings" style="background: #779FA1; width: 100%; margin:auto;">
+  <div class="ratings" style="background: #564154; width: 100%; margin:auto;">
     <div>
         <div>
             <Stars @clicked="updateAcademicsStars"></Stars> 
@@ -28,7 +28,7 @@
     </div>
   </div>
   <div v-if="reviewSubmitted">
-        <h2>
+        <h2 style="color:white">
           Ratings
         </h2>
         <div>
@@ -97,12 +97,3 @@ export default {
 }
 </script>
 
-<style>
-input{
-  background: #FAF7F2;
-}
-select {
-  background: #FAF7F2;
-}
-
-</style>

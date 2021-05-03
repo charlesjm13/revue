@@ -37,7 +37,7 @@ export default {
 }
 h2 {
     text-align:center;
-    color:black;
+    color:eggshell;
     font-size:28px;
     font-family:"Verdana", sans-serif;
     font-weight: bold;

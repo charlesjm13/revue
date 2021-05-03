@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="ratings" style="background: #779FA1; margin:auto;">
+  <div class="ratings" style="background: #564154; margin:auto;">
     <div>
       <br>
       <div>

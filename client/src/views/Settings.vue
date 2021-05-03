@@ -1,7 +1,7 @@
 <template>
   <div class="settings">
       <form>
-          <h1>Settings</h1>
+          <h1 style="color:white">Settings</h1>
           <label><strong>Change first name:  &nbsp;</strong></label><!--Allows input for first name-->
           <input v-model="fname" placeholder="First Name"><br><br>
           <label><strong>Change last name: &nbsp;</strong></label><!--Allows input for last name-->

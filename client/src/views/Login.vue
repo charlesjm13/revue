@@ -82,7 +82,7 @@ input {
   width: 100%;
   margin: 0;
   border: none;
-  background: #FAF7F2;
+  background: #779FA1;
   padding: 15px;
   text-align: center;
   margin: 20px 0;

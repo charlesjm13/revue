@@ -57,6 +57,11 @@ export default {
 
 <style scoped lang="css">
 h2{
-  font-size: 1
+  font-size: 30px;
+  color:aliceblue
+}
+h1{
+  font-size: 50px;
+  color:aliceblue
 }
 </style>
