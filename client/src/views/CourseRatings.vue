@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="home-container" style="margin: auto; text-align: center;">
+  <div class="home-container" style="margin: auto; text-align: center; width: 1000px;">
     <h1>Course Ratings</h1>
     <select v-model="selectedCollege">
       <option value="" disabled selected>Select A School</option>
@@ -59,7 +59,7 @@
     <br>
     <input type="text" placeholder="Course Number..." pattern ="\d*" maxlength="3" minlength="3" v-if="courseField != ''" v-model="courseNumber">
     <div style="margin: auto; text-align:center; padding-top: 10px;">
-    <CourseRatings :courseNumber="courseNumber"></CourseRatings>
+    <CourseRatings :courseNumber="courseNumber" :courseField="courseField" :selectedCollege="selectedCollege"></CourseRatings>
     </div>
   </div>
 </template>
