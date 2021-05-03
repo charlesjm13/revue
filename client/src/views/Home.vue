@@ -58,10 +58,10 @@ export default {
 <style scoped lang="css">
 h2{
   font-size: 30px;
-  color:aliceblue
+  color:darkslategray
 }
 h1{
   font-size: 50px;
-  color:aliceblue
+  color:darkslategray
 }
 </style>

@@ -3,7 +3,7 @@ html, body {
     padding: 0;
     width: 100%;
     min-height: 100vh;
-    background-color: #564154;
+    background-color: #f0ead6;
 }
 
 * {
@@ -30,7 +30,7 @@ a {
 }
 
 p{
-    color: rgb(240,234,214);
+    color: rgb(47, 79, 79);
 }
 
 .button {

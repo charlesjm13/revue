@@ -1,6 +1,7 @@
 <template lang="html">
   <div class="home-container" style="margin: auto; text-align: center; width: 1000px;">
-    <h1 style="color:white">Course Ratings</h1>
+    <h1 style="color:darkgrayslate">Course Ratings</h1>
+    
     <select v-model="selectedCollege">
       <option value="" disabled selected>Select A School</option>
       <option value="Knox College">Knox College</option>
@@ -82,9 +83,9 @@ export default {
 
 <style lang="css">
 select, input {
-  background: #FAF7F2;
+  background: #f0ead6;
 }
 .home-container {
-  background: #564154;
+  background: #f0ead6;
 }
 </style>

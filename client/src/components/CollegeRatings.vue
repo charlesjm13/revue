@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="ratings" style="background: #564154; width: 100%; margin:auto;">
+  <div class="ratings" style="background: #f0ead6; width: 100%; margin:auto;">
     <div>
         <div>
             <Stars @clicked="updateAcademicsStars"></Stars> 
@@ -18,17 +18,17 @@
             Dining Services
         </div>
         <br>
-        <button v-if="this.$props.selectedCollege != ''
+        <Button v-if="this.$props.selectedCollege != ''
                       && this.academicStars!=0
                       && this.athleticsStars!=0
                       && this.dormsStars!=0
                       && this.diningStars!=0"
                       v-on:click="reviewSubmitted=true">
-                      Submit A Review</button>
+                      Submit A Review</Button>
     </div>
   </div>
   <div v-if="reviewSubmitted">
-        <h2 style="color:white">
+        <h2 style="color:">
           Ratings
         </h2>
         <div>

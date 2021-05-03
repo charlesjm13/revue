@@ -25,6 +25,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #4B284F;
+    background-color: #f0ead6;
 }
 </style>

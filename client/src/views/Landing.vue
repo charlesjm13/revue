@@ -1,7 +1,8 @@
 <template>
   <div class="homecontainer" style="background-image: url(./assets/books.jpg);">
-    <div class="txtcenter" style="color:black;">
-      <h1> Hello {{ $store.state.user.username }}</h1>
+    <div class="txtcenter" style="color:DarkGraySlate;">
+      <h1> Hello, {{ $store.state.user.username }}!</h1>
+      <h2 style="font-size:14px"> Click around, build your profile, or just chill here and admire our wallpaper.</h2>
     </div>
     <div class="container">
       </div>
@@ -18,7 +19,7 @@ export default {
 *{
   margin:0;
 padding:0;
-font-family: 'Roboto', sans-serif;
+font-family: 'Verdana', sans-serif;
 }
 .homecontainer{
   min-height: 100vh;
@@ -30,6 +31,8 @@ font-family: 'Roboto', sans-serif;
 
 .txtcenter {
   text-align: center;
+  background:salmon;
+  color:darkgrayslate;
 }
 /* .container{
   height: 100vh;
