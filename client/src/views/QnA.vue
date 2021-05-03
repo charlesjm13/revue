@@ -8,7 +8,7 @@
       <div class="port-items-wrapper">
 
         <div class="port-item-wrapper">
-          <div class="port-img-background" style=" background-image: url('../../public/assets/classes.jpg')">
+          <div class="port-img-background" style=" background-image: url('./assets/classes.jpg')">
             <div class="img-text-wrapper">
               <div class="logo-wrappper">
                 <img src="'../../public/assets/s.png'" alt="">
@@ -20,7 +20,7 @@
           </div>
           </div>
            <div class="port-item-wrapper">
-          <div class="port-img-background" style=" background-image: url('../../public/assets/campuslife.jpg')">
+          <div class="port-img-background" style=" background-image: url('./assets/campuslife.jpg')">
             <div class="img-text-wrapper">
               <div class="logo-wrappper">
                 <img src="'../../public/assets/h.png'" alt="">
@@ -32,7 +32,7 @@
           </div>
           </div>
            <div class="port-item-wrapper">
-          <div class="port-img-background" style=" background-image: url('../../public/assets/extracurricular.jpg')">
+          <div class="port-img-background" style=" background-image: url('./assets/extracurricular.jpg')">
             <div class="img-text-wrapper">
               <div class="logo-wrappper">
                 <img src="'../../public/assets/s.png'" alt="">
