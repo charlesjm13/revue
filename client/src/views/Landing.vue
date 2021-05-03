@@ -21,7 +21,7 @@ export default {
   font-family: 'Roboto', sans-serif;
 }
 h1 {
-  color: #564154;
+  color: #FQEAD6;
 }
 
 .txtcenter {

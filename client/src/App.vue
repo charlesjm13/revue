@@ -33,11 +33,11 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #FAF7F2;
+    background-color: #564154;
 }
 h2 {
     text-align:center;
-    color:black;
+    color:FQEAD6;
     font-size:28px;
     font-family:"Verdana", sans-serif;
     font-weight: bold;
