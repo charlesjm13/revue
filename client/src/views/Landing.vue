@@ -1,6 +1,6 @@
 <template>
-  <div class="home container">
-    <div class="txtcenter" style="color:white;">
+  <div class="homecontainer">
+    <div class="txtcenter" style="color:black;">
       <h1> Hello {{ $store.state.user.username }}</h1>
     </div>
     <div class="container">
@@ -20,18 +20,23 @@ export default {
 padding:0;
 font-family: 'Roboto', sans-serif;
 }
+.homecontainer{
+  min-height: 100vh;
+  width: 1400px;
+  background-image: url(../../public/assets/books.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
 
 .txtcenter {
   text-align: center;
 }
-.container{
+/* .container{
   height: 100vh;
-  width: 100%;
+  width: 1000px;
   /* background-image: url('../../public/assets/land2.jpg'); */
-  background-position: center;
-  background-size: cover;
-  
-
-
-}
+  /* background-position: center; */
+  /* background-size: cover; */
+/* } */ 
 </style>
