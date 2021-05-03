@@ -46,31 +46,31 @@
 
       </div>
       </div>
-    <!-- <PostPreview v-for="post in posts" :key="post.id" :post="post">
+    <PostPreview v-for="post in posts" :key="post.id" :post="post">
       {{ post.title }}
     </PostPreview>
-    <CreateButton></CreateButton> -->
+    <CreateButton></CreateButton>
   </div>
 </template>
 
 <script>
-// import PostPreview from '@/components/PostPreview'
-// import PostsService from "@/services/PostsService";
-// import CreateButton from '@/components/CreateButton'
+import PostPreview from '@/components/PostPreview'
+import PostsService from "@/services/PostsService";
+import CreateButton from '@/components/CreateButton'
 export default {
   name: "QnA",
-// components: { PostPreview, CreateButton },
-// data() {
-//     return {
-//       posts: null,
-//     };
-//   },
+ components: { PostPreview, CreateButton },
+ data() {
+     return {
+       posts: null,
+     };
+   },
 
-//   mounted() {
-//     PostsService.index().then((response) => {
-//       this.posts = response.data;
-//     });
-//   },
+   mounted() {
+     PostsService.index().then((response) => {
+       this.posts = response.data;
+     });
+   },
 };
 
 
