@@ -76,6 +76,9 @@ export default {
 </script>
 
 <style scoped lang="css">
+.home-container {
+  width: 1300px;
+}
 
 .port-items-wrapper{
   display:grid;
