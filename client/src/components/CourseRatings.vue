@@ -1,25 +1,60 @@
 <template lang="html">
-  <div class="ratings" style="background: #779FA1; width: 50%; margin:auto;">
+  <div class="ratings" style="background: #779FA1; margin:auto;">
     <div>
       <br>
       <div>
-        <Stars></Stars>
+        <Stars @clicked="updateStars"></Stars>
         <br>
         How would you rate this course?
       </div>
       <br>
       <form>
-        <label for="coursePos" style="float:left; padding-bottom: 25px; padding-top: 5px; padding-left: 20px;">What did you like most about this course?:</label>
+        <label for="coursePos" style="padding-bottom: 25px; padding-top: 5px; padding-left: 20px;">What did you like most about this course?:</label>
         <input name="coursePos" type="text" v-model="coursePos">
         <br>
         <br>
-        <label for="courseNeg" style="float:left; padding-bottom: 25px; padding-top: 5px; padding-left: 20px;">What do you think could be improved about this course?:</label>
+        <label for="courseNeg" style="padding-bottom: 25px; padding-top: 5px; padding-left: 20px;">What do you think could be improved about this course?:</label>
         <input name="courseNeg" type="text" v-model="courseNeg">
       </form>
       <br>
-      <button v-if="this.$props.courseNumber.length == 3">Submit A Review</button>
+      <button v-if="this.$props.courseNumber.length == 3 
+                    && this.courseRating != 0 
+                    && this.coursePos != '' 
+                    && this.courseNeg != ''"
+                    v-on:click="reviewSubmitted = true"
+                    >
+                      Submit A Review</button>
       <br>
       <br>
+      <div v-if="reviewSubmitted">
+        <h2>
+          Ratings
+        </h2>
+        <div>
+          College Name: {{ this.$props.selectedCollege }}
+        </div>
+        <div>
+          Course: {{ this.$props.courseField  }} {{ this.$props.courseNumber }}
+        </div>
+        <div v-if="this.courseRating==1">
+          Course Rating: {{ this.courseRating  }} Star
+        </div>
+        <div v-if="this.courseRating!=1">
+          Course Rating: {{ this.courseRating  }} Stars
+        </div>
+        <div>
+          What did you like most about this course?
+        </div>
+        <div>
+          {{ this.coursePos }}
+        </div>
+        <div>
+          What do you think could be improved about this course?
+        </div>
+        <div>
+          {{ this.courseNeg }}
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -30,14 +65,20 @@ import Stars from '@/components/Stars'
 export default {
     name: 'ratings',
     components: {Stars},
-    props: ['courseNumber'],
+    props: ['courseNumber', 'courseField', 'selectedCollege'],
     data() {
       return {
-        ratingType: '',
         coursePos: '',
         courseNeg: '',
-        cNumber: this.$props.courseNumber
+        cNumber: this.$props.courseNumber,
+        courseRating: '',
+        reviewSubmitted: false
       } 
+    },
+    methods: {
+      updateStars (stars) {
+        this.courseRating = stars;
+      }
     }
 }
 </script>
