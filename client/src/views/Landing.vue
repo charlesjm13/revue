@@ -20,9 +20,6 @@ export default {
 padding:0;
 font-family: 'Roboto', sans-serif;
 }
-<<<<<<< HEAD
-
-=======
 .homecontainer{
   min-height: 100vh;
   width: 1400px;
@@ -30,7 +27,6 @@ font-family: 'Roboto', sans-serif;
   background-size: cover;
   position: relative;
 }
->>>>>>> e7dfd5146d265fcb2f952ad0163e559e3419e4e5
 
 .txtcenter {
   text-align: center;
