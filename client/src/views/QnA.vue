@@ -1,5 +1,5 @@
 <template>
-  <div class="home container">
+  <div class="home-container">
     <div class="txtcenter">
       <h1> Questions and Answers</h1>
     </div>
