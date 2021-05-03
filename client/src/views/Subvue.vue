@@ -1,4 +1,4 @@
-<<template lang="html">
+<template lang="html">
   <div class="subvue">
      <div class="container">
       <h1>Recent Posts</h1>
@@ -10,7 +10,6 @@
     </div>
     
     <SubvueInfo class="subvue-info" v-if="subvue" :subvue="subvue"></SubvueInfo>
-    Only show it if data was fetched
     <div v-else></div>
   </div> 
 
