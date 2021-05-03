@@ -77,6 +77,10 @@ export default {
 </script>
 
 <style>
+.home-container{
+  width: 1300px;
+}
+
 .txtcenter {
   text-align: center;
 }
