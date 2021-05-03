@@ -22,7 +22,7 @@ export default {
 
 <style>
 #app {
-    font-family: 'Courier New', Courier, sans-serif;
+    font-family: 'Verdana', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     align-items: center;
@@ -33,7 +33,7 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #FAF7F2;
+    background-color: #564154;
 }
 h2 {
     text-align:center;

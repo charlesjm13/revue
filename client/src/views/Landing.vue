@@ -20,9 +20,7 @@ export default {
   padding:0;
   font-family: 'Roboto', sans-serif;
 }
-h1 {
-  color: #564154;
-}
+
 
 .txtcenter {
   text-align: center;
