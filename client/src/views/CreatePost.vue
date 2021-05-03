@@ -4,7 +4,7 @@
     <form @submit.prevent="create" enctype="multipart/form-data">
       <p class="error">{{ error }}</p>
       <input v-model="title" type="text" placeholder="Title" ref="title">
-      <input v-model="subvue" type="text" placeholder="Subvue">
+      <input v-model="subvue" type="text" placeholder="Subvue"> 
       <div v-if="imagePreview" id="image-preview" :style="'background-image: url(' + imagePreview + ')'"></div>
       <div id="image-upload">
         <p>
@@ -30,7 +30,7 @@ export default {
     data() {
         return {
             title: '',
-            subvue: '',
+             subvue: '',
             content: '',
             error: null,
             image: null,
@@ -42,7 +42,7 @@ export default {
         create() {
             var formData = new FormData();
             formData.append('title', this.title)
-            formData.append('subvue', this.subvue)
+             formData.append('subvue', this.subvue)
             formData.append('content', this.content)
             console.log(formData)
 
@@ -55,7 +55,7 @@ export default {
                 .then(response => {
                     this.$router.push({
                         name: 'Post',
-                        params: { id: response.data.id, subvuePermalink: response.data.subvue.permalink }
+                        params: { id: response.data.id } , subvuePermalink: response.data.subvue.permalink
                     })
                 })
                 .catch(error => {

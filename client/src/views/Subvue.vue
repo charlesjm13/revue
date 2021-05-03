@@ -1,6 +1,6 @@
-<template lang="html">
+<<template lang="html">
   <div class="subvue">
-    <div class="container">
+     <div class="container">
       <h1>Recent Posts</h1>
       <PostPreview :hideSubvue="true" v-for="post in posts" :key="post.id" :post="post">
         {{ post.title }}
@@ -10,11 +10,11 @@
     </div>
     
     <SubvueInfo class="subvue-info" v-if="subvue" :subvue="subvue"></SubvueInfo>
-    <!-- Only show it if data was fetched -->
+    Only show it if data was fetched
     <div v-else></div>
-  </div>
+  </div> 
 
-</template>
+</template>-->
 
 <script>
 import SubvueInfo from '@/components/SubvueInfo'
@@ -59,7 +59,7 @@ export default {
         }
     }
 }
-</script>
+</script> -->
 
 <style scoped lang="css">
 .container {
@@ -71,4 +71,4 @@ export default {
     width: 20%;
     float: right;
 }
-</style>
+</style> -->

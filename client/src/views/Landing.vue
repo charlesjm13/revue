@@ -1,7 +1,7 @@
 <template>
-  <div class="home container">
-    <div class="txtcenter" style="color: #FAF7F2; padding-top: 100px;">
-      <h1> Welcome {{ $store.state.user.username }}</h1>
+  <div class="homecontainer">
+    <div class="txtcenter" style="color:black;">
+      <h1> Hello {{ $store.state.user.username }}</h1>
     </div>
     <div class="container">
       </div>
@@ -17,20 +17,26 @@ export default {
 <style scoped>
 *{
   margin:0;
-  padding:0;
-  font-family: 'Roboto', sans-serif;
+padding:0;
+font-family: 'Roboto', sans-serif;
 }
-h1 {
-  color: #564154;
+.homecontainer{
+  min-height: 100vh;
+  width: 1400px;
+  background-image: url(./assets/books.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
 }
 
 .txtcenter {
   text-align: center;
 }
-.container{
+/* .container{
   height: 100vh;
-  width: 100%;
-  background-position: center;
-  background-size: cover;
-}
+  width: 1000px;
+  /* background-image: url('../../public/assets/land2.jpg'); */
+  /* background-position: center; */
+  /* background-size: cover; */
+/* } */ 
 </style>
