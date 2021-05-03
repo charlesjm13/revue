@@ -1,10 +1,6 @@
 <template>
-<<<<<<< Updated upstream
-  <div class="home-container">
-    <div class="txtcenter">
-=======
+
   <div class="home container">
->>>>>>> Stashed changes
       <h1> Questions and Answers</h1>
 
     <div class="contentwrapper">
@@ -79,19 +75,8 @@ export default {
 
 </script>
 
-<<<<<<< Updated upstream
-<style>
-.home-container{
-  width: 1300px;
-}
-
-.txtcenter {
-  text-align: center;
-}
-=======
 <style scoped lang="css">
 
->>>>>>> Stashed changes
 .port-items-wrapper{
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
