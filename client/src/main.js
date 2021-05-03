@@ -5,7 +5,7 @@ import store from './store'
 import PrimeVue from 'primevue/config';
 import Button from 'primevue/button'
 
-require('@/assets/style.css')
+//require('@/assets/style.css')
 
 import 'primevue/resources/themes/vela-purple/theme.css'
 import 'primevue/resources/primevue.min.css'
