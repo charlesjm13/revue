@@ -11,7 +11,7 @@
           <div class="port-img-background" style=" background-image: url('./assets/classes.jpg')">
             <div class="img-text-wrapper">
               <div class="logo-wrappper">
-                <img src="./assets/s.png" alt="">
+                <!-- <img src="./assets/s.png" alt=""> -->
               </div>
               <div class="subtitle">
                 Classes 
@@ -23,7 +23,7 @@
           <div class="port-img-background" style=" background-image: url('./assets/campuslife.jpg')">
             <div class="img-text-wrapper">
               <div class="logo-wrappper">
-                <img src="./assets/h.png" alt="">
+                <!-- <img src="./assets/h.png" alt=""> -->
               </div>
               <div class="subtitle">
                 Campus Life
@@ -35,7 +35,7 @@
           <div class="port-img-background" style=" background-image: url('./assets/extracurricular.jpg')">
             <div class="img-text-wrapper">
               <div class="logo-wrappper">
-                <img src="./assets/s.png" alt="">
+                <!-- <img src="./assets/s.png" alt=""> -->
               </div>
               <div class="subtitle">
                 extracurricular
