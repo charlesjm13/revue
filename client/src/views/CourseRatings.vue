@@ -1,61 +1,15 @@
 <template lang="html">
   <div class="home-container" style="margin: auto; text-align: center; width: 1000px;">
-    <h1>Course Ratings</h1>
-    <select v-model="selectedCollege">
-      <option value="" disabled selected>Select A School</option>
-      <option value="Knox College">Knox College</option>
-    </select>
+    <h1 style="color:darkgrayslate">Course Ratings</h1>
+        <div>
+    <Dropdown v-model="selectedCollege" :options="colleges" optionLabel="name" placeholder="Select a college" />
+    </div>
+
     <br>
     <br>
-    <select v-model="courseField" v-if="selectedCollege != ''">
-       <input type="text" placeholder="Search.." onkeyup="filterFunction()">
-      <option value="" disabled selected>Select A Course Field</option>
-      <option value="Africana Studies">Africana Studies</option>
-      <option value="American Studies">American Studies</option>
-      <option value="Anthropology and Sociology">Anthropology and Sociology</option>
-      <option value="Art and Art History">Art and Art History</option>
-      <option value="Asian Studies">Asian Studies</option>
-      <option value="Biochemistry">Biochemistry</option>
-      <option value="Biology">Biology</option>
-      <option value="Business and Management">Business and Management</option>
-      <option value="Chemistry">Chemistry</option>
-      <option value="Chinese">Chinese</option>
-      <option value="Classics">Classics</option>
-      <option value="Classics/Greek">Classics/Greek</option>
-      <option value="Classics/Latin">Classics/Latin</option>
-      <option value="Computer Science">Computer Science</option>
-      <option value="Dance">Dance</option>
-      <option value="Economics">Economics</option>
-      <option value="Educational Studies">Educational Studies</option>
-      <option value="English">English</option>
-      <option value="Environmental Studies">Environmental Studies</option>
-      <option value="Film Studies">Film Studies</option>
-      <option value="French">French</option>
-      <option value="Gender and Women's Studies">Gender and Women's Studies</option>
-      <option value="German">German</option>
-      <option value="Health Studies">Health Studies</option>
-      <option value="History">History</option>
-      <option value="International Studies">International Studies</option>
-      <option value="Interdisciplinary">Interdisciplinary</option>
-      <option value="Japanese">Japanese</option>
-      <option value="Latin American Studies">Latin American Studies</option>
-      <option value="Mathematics">Mathematics</option>
-      <option value="Modern Languages">Modern Languages</option>
-      <option value="Music">Music</option>
-      <option value="Neuroscience">Neuroscience</option>
-      <option value="Peace and Justice Studies">Peace and Justice Studies</option>
-      <option value="Philosophy">Philosophy</option>
-      <option value="Physics and Astronomy">Physics and Astronomy</option>
-      <option value="Political Science">Political Science</option>
-      <option value="Preceptorial">Preceptorial</option>
-      <option value="Psychology">Psychology</option>
-      <option value="Religious Studies">Religious Studies</option>
-      <option value="Spanish">Spanish</option>
-      <option value="Sports Studies">Sports Studies</option>
-      <option value="Statistics">Statistics</option>
-      <option value="Theatre">Theatre</option>
-    </select>
-    <br>
+    <div>
+    <Dropdown v-model="courseField" v-if="selectedCollege != ''" :options="courses" optionLabel="name" placeholder="Select a course field" />
+    </div>
     <br>
     <input type="text" placeholder="Course Number..." pattern ="\d*" maxlength="3" minlength="3" v-if="courseField != ''" v-model="courseNumber">
     <div style="margin: auto; text-align:center; padding-top: 10px;">
@@ -74,7 +28,56 @@ export default {
     return {
       selectedCollege: '',
       courseField: '',
-      courseNumber: ''
+      courseNumber: '',
+      colleges: [
+        {name: 'Knox College', code: 'KNOX'}
+      ],
+      courses: [
+        {name: 'Africana Studies', code: 'AFST'},
+        {name: 'American Studies', code: 'AMER'},
+        {name: 'Anthropology and Sociology', code: 'ANSO'},
+        {name: 'Art and Art History', code: 'ART'},
+        {name: 'Asian Studies', code: 'ASIA'},
+        {name: 'Biochemistry', code: 'BIOCHEM'},
+        {name: 'Biology', code: 'BIO'},
+        {name: 'Business and Management', code: 'BUSI'},
+        {name: 'Chemistry', code: 'CHEM'},
+        {name: 'Chinese', code: 'CHIN'},
+        {name: 'Classics', code: 'CLASS'},
+        {name: 'Classics/Greek', code: 'GRE'},
+        {name: 'Classics/Latin', code: 'LAT'},
+        {name: 'Computer Science', code: 'CS'},
+        {name: 'Dance', code: 'DNCE'},
+        {name: 'Economics', code: 'ECON'},
+        {name: 'Education Studies', code: 'EDU'},
+        {name: 'English', code: 'ENG'},
+        {name: 'Environmental Studies', code: 'ENVS'},
+        {name: 'Film Studies', code: 'FILM'},
+        {name: 'French', code: 'FRE'},
+        {name: 'Gender and Womens Studies', code: 'WOM'},
+        {name: 'German', code: 'GER'},
+        {name: 'Health Studies', code: 'HELTH'},
+        {name: 'History', code: 'HIST'},
+        {name: 'International Studies', code: 'INTL'},
+        {name: 'Interdisciplinary', code: 'INTER'},
+        {name: 'Japanese', code: 'JAP'},
+        {name: 'Latin American Studies', code: 'LATI'},
+        {name: 'Mathematics', code: 'MATH'},
+        {name: 'Modern Languages', code: 'MODL'},
+        {name: 'Music', code: 'MUS'},
+        {name: 'Neuroscience', code: 'NEURO'},
+        {name: 'Peace and Justice Studies', code: 'PEAC'},
+        {name: 'Philosophy', code: 'PHIL'},
+        {name: 'Physics and Astronomy', code: 'PHYS'},
+        {name: 'Political Science', code: 'POSCI'},
+        {name: 'Preceptorial', code: 'PREC'},
+        {name: 'Psychology', code: 'PSYC'},
+        {name: 'Religious Studies', code: 'RELG'},
+        {name: 'Spanish', code: 'SPAN'},
+        {name: 'Sports Studies', code: 'SPRT'},
+        {name: 'Statistics', code: 'STATS'},
+        {name: 'Theatre', code: 'THEAT'}
+      ]
     }
   }
 }
@@ -82,9 +85,9 @@ export default {
 
 <style lang="css">
 select, input {
-  background: #FAF7F2;
+  background: #f0ead6;
 }
 .home-container {
-  background: #779FA1;
+  background: #f0ead6;
 }
 </style>

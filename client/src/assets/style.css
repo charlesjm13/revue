@@ -3,14 +3,13 @@ html, body {
     padding: 0;
     width: 100%;
     min-height: 100vh;
-    background-color: #FF6542;
+    background-color: #f0ead6;
 }
 
 * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-
     font-family: 'Verdana', sans-serif;
 }
 
@@ -30,7 +29,7 @@ a {
 }
 
 p{
-    color: rgb(240,234,214);
+    color: rgb(47, 79, 79);
 }
 
 .button {
@@ -50,3 +49,8 @@ p{
 .deprecated-error {
     color: rgb(204, 152, 152) !important;
 }
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: darkslategray;
+    opacity: 1; /* Firefox */
+  }

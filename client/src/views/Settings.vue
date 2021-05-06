@@ -1,8 +1,9 @@
 <template>
   <div class="settings">
       <form>
-          <h1>Settings</h1>
-          <label><strong>Change first name:  &nbsp;</strong></label><!--Allows input for first name-->
+          <h1 style="color:darkgrayslate">Settings</h1>
+          <br><br>
+          <label><strong>Change first name: &nbsp;</strong></label><!--Allows input for last name-->
           <input v-model="fname" placeholder="First Name"><br><br>
           <label><strong>Change last name: &nbsp;</strong></label><!--Allows input for last name-->
           <input v-model="lname" placeholder="Last Name"><br><br>
@@ -13,7 +14,7 @@
           <label><strong>Reset password: &nbsp;</strong></label><!--Allows input for new password-->
           <input v-model="password" placeholder="Reset Password"><br><br>
           <label><strong>Change student type: &nbsp;</strong></label><!--Allows selection of student type-->
-          <select v-model="stype">
+         <select v-model="stype">
               <option value="" disabled selected>Student types:</option>
               <option>Prospective student</option>
               <option>Current student</option>
@@ -114,6 +115,6 @@ export default {
 
 <style>
   form{
-    text-align: center;
+    align-content: center;
   }
 </style>

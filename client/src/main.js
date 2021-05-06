@@ -4,6 +4,8 @@ import router from './router'
 import store from './store'
 import PrimeVue from 'primevue/config';
 import Button from 'primevue/button'
+import Dropdown from 'primevue/dropdown';
+import InputText from 'primevue/inputtext'
 
 require('@/assets/style.css')
 
@@ -15,5 +17,8 @@ app.use(router)
 app.use(store)
 app.use(PrimeVue)
 app.component('Button', Button)
+app.component('Dropdown', Dropdown)
+app.component('InputText', InputText)
+
 
 app.mount('#app')

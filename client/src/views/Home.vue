@@ -54,3 +54,14 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="css">
+h2{
+  font-size: 18px;
+  color:darkslategray
+}
+h1{
+  font-size: 35px;
+  color:darkslategray
+}
+</style>

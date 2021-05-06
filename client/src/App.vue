@@ -22,7 +22,7 @@ export default {
 
 <style>
 #app {
-    font-family: 'Courier New', Courier, sans-serif;
+    font-family: 'Verdana', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     align-items: center;
@@ -33,11 +33,11 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #564154;
+    background-color: #f0ead6;
 }
 h2 {
     text-align:center;
-    color:FQEAD6;
+    color:DarkGraySlate;
     font-size:28px;
     font-family:"Verdana", sans-serif;
     font-weight: bold;

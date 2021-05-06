@@ -1,7 +1,7 @@
 <template>
     <header style="margin: auto; text-align:center;">
         <SignUpButton style="font-size: 20px;" text="Sign Up" color="#779FA1" />
-        <SignInButton style="font-size: 20px;" text="Sign In" color="#88498F" />
+        <SignInButton style="font-size: 20px;" text="Sign In" color="#FF6542" />
     </header>
 </template>
 
@@ -25,6 +25,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #4B284F;
+    background-color: #f0ead6;
 }
 </style>

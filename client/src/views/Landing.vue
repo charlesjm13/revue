@@ -1,7 +1,8 @@
 <template>
-  <div class="home container">
-    <div class="txtcenter" style="color: #FAF7F2; padding-top: 100px;">
-      <h1> Welcome {{ $store.state.user.username }}</h1>
+  <div class="homecontainer" style="background-image: url(./assets/books.jpg);">
+    <div class="txtcenter" style="color:DarkGraySlate;">
+      <h1> Hello, {{ $store.state.user.username }}!</h1>
+      <h2 style="font-size:14px"> Click around, build your profile, or just chill here and admire our wallpaper.</h2>
     </div>
     <div class="container">
       </div>
@@ -17,20 +18,32 @@ export default {
 <style scoped>
 *{
   margin:0;
-  padding:0;
-  font-family: 'Roboto', sans-serif;
+padding:0;
+font-family: 'Verdana', sans-serif;
 }
+<<<<<<< HEAD
 h1 {
   color: #FQEAD6;
+=======
+.homecontainer{
+  min-height: 100vh;
+  width: 1400px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+>>>>>>> master
 }
 
 .txtcenter {
   text-align: center;
+  background:salmon;
+  color:darkgrayslate;
 }
-.container{
+/* .container{
   height: 100vh;
-  width: 100%;
-  background-position: center;
-  background-size: cover;
-}
+  width: 1000px;
+  /* background-image: url('../../public/assets/land2.jpg'); */
+  /* background-position: center; */
+  /* background-size: cover; */
+/* } */ 
 </style>
