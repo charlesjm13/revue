@@ -2,7 +2,8 @@
   <div class="settings">
       <form>
           <h1 style="color:darkgrayslate">Settings</h1>
-          <label><strong>Change first name:  &nbsp;</strong></label><!--Allows input for first name-->
+          <br><br>
+          <label><strong>Change first name: &nbsp;</strong></label><!--Allows input for last name-->
           <input v-model="fname" placeholder="First Name"><br><br>
           <label><strong>Change last name: &nbsp;</strong></label><!--Allows input for last name-->
           <input v-model="lname" placeholder="Last Name"><br><br>
@@ -114,6 +115,6 @@ export default {
 
 <style>
   form{
-    text-align: center;
+    align-content: center;
   }
 </style>
