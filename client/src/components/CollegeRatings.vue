@@ -32,7 +32,7 @@
           Ratings
         </h2>
         <div>
-          College Name: {{ this.college }}
+          College Name: {{ this.$props.selectedCollege.name }}
         </div>
         <div v-if="this.academicStars==1">
           Academics: {{ this.academicStars  }} Star
@@ -72,7 +72,6 @@ export default {
       return {
         ratingType: '',
         coursePos: '',
-        college: this.$props.selectedCollege,
         academicStars: '',
         athleticsStars: '',
         dormsStars: '',

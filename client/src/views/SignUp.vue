@@ -81,7 +81,7 @@ export default {
         .then(response => {
           this.$store.dispatch('setToken', response.data.token)
           this.$store.dispatch('setUser', response.data.user)
-          this.$router.push({name: 'Home'})
+          this.$router.push({name: 'Landing'})
         })
         .catch(e => {
           this.error = e.response.data.error;

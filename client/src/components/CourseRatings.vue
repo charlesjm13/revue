@@ -31,10 +31,10 @@
           Ratings
         </h2>
         <div>
-          College Name: {{ this.$props.selectedCollege }}
+          College Name: {{ this.$props.selectedCollege.name }}
         </div>
         <div>
-          Course: {{ this.$props.courseField  }} {{ this.$props.courseNumber }}
+          Course: {{ this.$props.courseField.name  }} {{ this.$props.courseNumber }}
         </div>
         <div v-if="this.courseRating==1">
           Course Rating: {{ this.courseRating  }} Star

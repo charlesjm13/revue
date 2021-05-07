@@ -20,6 +20,10 @@ connect(username=username, password=password, host=host, db=db)
 # http://docs.mongoengine.org/apireference.html#documents
 class User(Document):
     email = EmailField(required=True, unique=True)
+    firstname = StringField(required=True)
+    lastname = StringField(required=True)
+    usertype = StringField(required=True)
+    userschool = StringField()
     username = StringField(max_length=50, required=True, unique=True)
     password = StringField(required=True)
     subscribed = ListField(ReferenceField("Subvue"))
@@ -30,7 +34,11 @@ class User(Document):
 
         data = {
             "id": str(self.id),
+            "firstname": self.firstname,
+            "lastname": self.lastname,
             "username": self.username,
+            "usertype": self.usertype,
+            "userschool": self.userschool,
             "hashedEmail": hashed_email,
             "subscribed": [subvue.to_public_json() for subvue in self.subscribed],
             "created": self.created,
