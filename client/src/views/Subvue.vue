@@ -1,4 +1,4 @@
-<<template lang="html">
+<template lang="html">
   <div class="subvue">
      <div class="container">
       <h1>Recent Posts</h1>
