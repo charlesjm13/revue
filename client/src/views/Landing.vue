@@ -21,17 +21,12 @@ export default {
 padding:0;
 font-family: 'Verdana', sans-serif;
 }
-<<<<<<< HEAD
-h1 {
-  color: #FQEAD6;
-=======
 .homecontainer{
   min-height: 100vh;
   width: 1400px;
   background-position: center;
   background-size: cover;
   position: relative;
->>>>>>> master
 }
 
 .txtcenter {
