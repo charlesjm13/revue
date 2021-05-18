@@ -18,7 +18,11 @@ def sign_up():
     schema = Schema({
         "username": str,
         "email": Regex(MAIL_REGEX, error="Mail address is invalid"),
-        "password": str
+        "password": str,
+        "firstname": str,
+        "lastname": str,
+        "usertype": str,
+        "userschool": str
     })
     validated = schema.validate(request.json)
 
@@ -33,7 +37,11 @@ def sign_up():
     user = User(
         username=validated["username"],
         email=validated["email"],
-        password=hashed_password
+        password=hashed_password,
+        firstname=validated["firstname"],
+        lastname=validated["lastname"],
+        usertype=validated["usertype"],
+        userschool=validated["userschool"]
     ).save()
 
     token = jwt.encode({
@@ -49,7 +57,11 @@ def sign_up():
             "username": user.username,
             "email": user.email,
             "password": user.password,
-            "created": str(user.created)
+            "created": str(user.created),
+            "firstname": user.firstname,
+            "lastname": user.lastname,
+            "usertype": user.usertype,
+            "userschool": user.userschool
         },
         "token": token.decode("UTF-8")
     })
