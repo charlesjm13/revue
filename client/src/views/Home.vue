@@ -6,7 +6,7 @@
     </div>
     <Welcome />
     <div class = "idk" style="padding-top: 20px;">
-      <img  src= "./assets/image3.jpg" width="800" height="400">
+      <img  src= "/assets/image3.jpg" width="800" height="400">
      
     </div>
   
