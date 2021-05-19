@@ -99,7 +99,11 @@ def login():
             "username": user.username,
             "email": user.email,
             "password": user.password,
-            "created": str(user.created)
+            "created": str(user.created),
+            "firstname": user.firstname,
+            "lastname": user.lastname,
+            "usertype": user.usertype,
+            "userschool": user.userschool
         },
         "token": token.decode("UTF-8")
     })
