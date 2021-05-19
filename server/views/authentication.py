@@ -16,11 +16,11 @@ MAIL_REGEX = r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
 @app.route("/api/signup", methods=["POST"])
 def sign_up():
     schema = Schema({
-        "username": str,
-        "email": Regex(MAIL_REGEX, error="Mail address is invalid"),
-        "password": str,
         "firstname": str,
         "lastname": str,
+        "username": str,
+        "password": str,
+        "email": Regex(MAIL_REGEX, error="Mail address is invalid"),
         "usertype": str,
         "userschool": str
     })
@@ -35,14 +35,15 @@ def sign_up():
     hashed_password = generate_password_hash(validated["password"])
 
     user = User(
-        username=validated["username"],
-        email=validated["email"],
-        password=hashed_password,
         firstname=validated["firstname"],
         lastname=validated["lastname"],
+        username=validated["username"],
+        password=hashed_password,
+        email=validated["email"],
         usertype=validated["usertype"],
         userschool=validated["userschool"]
-    ).save()
+    )
+    user.save()
 
     token = jwt.encode({
         "username": user.username,
