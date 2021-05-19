@@ -16,9 +16,13 @@ MAIL_REGEX = r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
 @app.route("/api/signup", methods=["POST"])
 def sign_up():
     schema = Schema({
+        "firstname": str,
+        "lastname": str,
         "username": str,
+        "password": str,
         "email": Regex(MAIL_REGEX, error="Mail address is invalid"),
-        "password": str
+        "usertype": str,
+        "userschool": str
     })
     validated = schema.validate(request.json)
 
@@ -31,10 +35,15 @@ def sign_up():
     hashed_password = generate_password_hash(validated["password"])
 
     user = User(
+        firstname=validated["firstname"],
+        lastname=validated["lastname"],
         username=validated["username"],
+        password=hashed_password,
         email=validated["email"],
-        password=hashed_password
-    ).save()
+        usertype=validated["usertype"],
+        userschool=validated["userschool"]
+    )
+    user.save()
 
     token = jwt.encode({
         "username": user.username,
@@ -49,7 +58,11 @@ def sign_up():
             "username": user.username,
             "email": user.email,
             "password": user.password,
-            "created": str(user.created)
+            "created": str(user.created),
+            "firstname": user.firstname,
+            "lastname": user.lastname,
+            "usertype": user.usertype,
+            "userschool": user.userschool
         },
         "token": token.decode("UTF-8")
     })
@@ -86,7 +99,11 @@ def login():
             "username": user.username,
             "email": user.email,
             "password": user.password,
-            "created": str(user.created)
+            "created": str(user.created),
+            "firstname": user.firstname,
+            "lastname": user.lastname,
+            "usertype": user.usertype,
+            "userschool": user.userschool
         },
         "token": token.decode("UTF-8")
     })

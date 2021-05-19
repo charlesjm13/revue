@@ -4,16 +4,16 @@
       <h1>Sign Up</h1>
       <p class="error" :class="{ 'deprecated-error' : deprecatedError }">{{ error }}</p>
       <input type="text" v-model="firstname" placeholder="First Name">
-      <input type="text" v-model="lasttname" placeholder="Last Name">
+      <input type="text" v-model="lastname" placeholder="Last Name">
       <input type="text" v-model="username" placeholder="Username" ref="username">
       <input type="email" v-model="email" placeholder="E-Mail">
       <input type="password" v-model="password" placeholder="Password">
       <input type="password" v-model="passwordRepeat" placeholder="Repeat Password">
       <p v-if="!passwordsMatch" class="error">Passwords do not match!</p>
       
-        <label for="user-types" style="float:left; padding-top: 5px; padding-left: 20px;">User Type:</label>
+        <label for="usertype" style="float:left; padding-top: 5px; padding-left: 20px;">User Type:</label>
       <div style="padding-bottom: 5px; padding-right: 20px;">
-          <select name="user-types" v-model="usertype" style="float:right; padding: 5px 0px 5px 0px;">
+          <select name="usertype" v-model="usertype" style="float:right; padding: 5px 0px 5px 0px;">
            <option value="" disabled selected>Enter user type</option>
            <option value="Current Student"> Current Student </option>
            <option value="Prospective Student"> Prospective Student </option>
@@ -21,23 +21,15 @@
       </div>
       <br>
       <div v-if="usertype === 'Current Student'" style="padding-top: 20px">
-        <label for="current-school" style="float:left; padding-bottom: 25px; padding-top: 5px; padding-left: 20px;">Current School:</label>
+        <label for="userschool" style="float:left; padding-bottom: 25px; padding-top: 5px; padding-left: 20px;">Current School:</label>
          <div style="padding-right: 20px;">
-          <select name="current-school" v-model="userschool" style="float:right; padding: 5px 28px 5px 0px;">
+          <select name="userschool" v-model="userschool" style="float:right; padding: 5px 28px 5px 0px;">
            <option value="" disabled selected>Select a school</option>
            <option value="Knox College"> Knox College </option>
           </select>
           </div>
           <br>
-          <div v-if="userType === 'Current Student'" style="padding-top: 20px">
-              <label for="current-school" style="float:left; padding-bottom: 25px; padding-top: 5px; padding-left: 20px;">Current School:</label>
-              <div style="padding-right: 20px;">
-                  <select name="current-school" v-model="userschool" style="float:right; padding: 5px 28px 5px 0px;">
-                      <option value="" disabled selected>Select a school</option>
-                      <option value="Current Student"> Knox College </option>
-                  </select>
-              </div>
-          </div><br />
+         <br />
       </div>
       <input class="button" type="submit" value="Sign Up">
     </form>
@@ -61,7 +53,7 @@ export default {
       passwordRepeat: '',
       email: '',
       usertype: '',
-        userschool: ''
+      userschool: ''
     }
   },
 
@@ -69,14 +61,23 @@ export default {
     signUp() {
       if (this.passwordsMatch) {
         this.deprecatedError = false;
+        console.log(
+          this.firstname,
+          this.lastname,
+          this.username,
+          this.password,
+          this.email,
+          this.usertype,
+          this.userschool
+        )
         AuthenticationService.signup({
-          firstName: this.firstName,
-          lastName: this.lastName,
+          firstname: this.firstname,
+          lastname: this.lastname,
           username: this.username,
           password: this.password,
           email: this.email,
-          userType: this.userType,
-          userSchool: this.userSchool
+          usertype: this.usertype,
+          userschool: this.userschool
         })
         .then(response => {
           this.$store.dispatch('setToken', response.data.token)
