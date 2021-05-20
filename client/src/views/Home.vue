@@ -6,7 +6,7 @@
     </div>
     <Welcome />
     <div class = "idk" style="padding-top: 20px;">
-      <img  src= "/assets/image3.jpg" width="800" height="400"> -->
+      <img  src= "./assets/image3.jpg" width="800" height="400">
      
     </div>
   
@@ -54,3 +54,14 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="css">
+h2{
+  font-size: 18px;
+  color:darkslategray
+}
+h1{
+  font-size: 35px;
+  color:darkslategray
+}
+</style>

@@ -1,9 +1,16 @@
 <template>
+<<<<<<< HEAD
   <div class="homecontainer">
    
     <div class="container">
        <div class="txtcenter" style="color:black;">
       <h1> Hello {{ $store.state.user.username }}</h1>
+=======
+  <div class="homecontainer" style="background-image: url(./assets/books.jpg);">
+    <div class="txtcenter" style="color:DarkGraySlate;">
+      <h1> Hello, {{ $store.state.user.username }}!</h1>
+      <h2 style="font-size:14px"> Click around, build your profile, or just chill here and admire our wallpaper.</h2>
+>>>>>>> 7c073cf56978cc92545455a37c62c414ff733978
     </div>
       </div>
       <div class="services_container">
@@ -32,12 +39,15 @@ export default {
 *{
   margin:0;
 padding:0;
-font-family: 'Roboto', sans-serif;
+font-family: 'Verdana', sans-serif;
 }
 .homecontainer{
   min-height: 100vh;
   width: 1400px;
+<<<<<<< HEAD
   background-image: url(../../public/assets/becs1.jpg);
+=======
+>>>>>>> 7c073cf56978cc92545455a37c62c414ff733978
   background-position: center;
   background-size: cover;
   position: relative;
@@ -45,6 +55,8 @@ font-family: 'Roboto', sans-serif;
 
 .txtcenter {
   text-align: center;
+  background:salmon;
+  color:darkgrayslate;
 }
 .txtcenter h1{
 position: absolute;

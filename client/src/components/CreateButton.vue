@@ -31,7 +31,7 @@ export default {
   align-items: center;
   bottom: 3%;
   right: 1%;
-  background-color: rgb(23, 92, 93);
+  background-color: rgb(98,47,163);
   width: 56px;
   height: 56px;
   border-radius: 50%;
