@@ -114,3 +114,40 @@ class Post(Document):
         }
 
         return data
+
+
+# created new post below
+
+class Qpost(Document):
+    title = StringField(max_length=500, required=True)
+    user = ReferenceField(User, reverse_delete_rule=CASCADE)
+    content = StringField(max_length=5000)
+    comments = ListField(EmbeddedDocumentField(Comment))
+    created = DateTimeField(required=True, default=datetime.datetime.now())
+    image = StringField()
+    upvotes = ListField(ReferenceField(User, reverse_delete_rule=CASCADE))
+    downvotes = ListField(ReferenceField(User, reverse_delete_rule=CASCADE))
+
+    def to_public_json(self):
+        data = {
+            "id": str(self.id),
+            "title": self.title,
+            "content": self.content,
+            "user": {
+                "id": str(self.user.id),
+                "username": self.user.username
+            },
+            "comments": [comment.to_public_json() for comment in self.comments][::-1],
+            "created": self.created,
+            "image": self.image,
+            "upvotes": [{
+                "id": str(upvote.id),
+                "username": upvote.username
+            } for upvote in self.upvotes],
+            "downvotes": [{
+                "id": str(downvote.id),
+                "username": downvote.username
+            } for downvote in self.downvotes],
+        }
+
+        return data

@@ -51,7 +51,16 @@
     <div style="min-height: 400px; flex: 2.5; padding: 20px; padding-right: 0px">
       <div style="border: solid thin #aaa; padding: 10px; background-color: white">
         <textarea placeholder="Whats on your mind?"> </textarea>
-        <input id="post-button" type="submit" value="Post" />
+    <input id="pos" type="submit" value="Post" /> 
+    <button v-if="this.Pos != ''" v-on:click="post = true">post</button>
+    </div>
+    </div> 
+    <br />
+    <div v-if="post">
+      <div>What is on your mind?
+      </div>
+       <div>
+        {{ this.Pos}}
       </div>
     </div>
 
@@ -72,7 +81,8 @@ export default {
   components: { PostPreview, CreateButton },
   data() {
     return {
-      posts: null,
+      // posts: null,(comment out if you need to see create posts post)
+      Pos: '',
     };
   },
 
@@ -80,8 +90,8 @@ export default {
     PostsService.index().then((response) => {
       this.posts = response.data;
     });
-},
-}
+  },
+};
 
 // conts portfolioItems = document.querySelectorAll(".port-item-wrapper");
 // portfolioItems.forEach((portfolioItem) => {
@@ -90,11 +100,9 @@ export default {
 //     portfolioItem.childNodes[1].classList.add("img-darken");
 //   });
 // });
-
 </script>
 
 <style>
-
 .home-container {
   width: 1300px;
 }

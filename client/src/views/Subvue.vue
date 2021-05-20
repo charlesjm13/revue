@@ -14,7 +14,7 @@
     <div v-else></div>
   </div> 
 
-</template>-->
+</template>
 
 <script>
 import SubvueInfo from '@/components/SubvueInfo'
