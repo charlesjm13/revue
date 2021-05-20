@@ -19,13 +19,13 @@ connect(username=username, password=password, host=host, db=db)
 # This allows us to unwrap database queries directly into objects for convenience
 # http://docs.mongoengine.org/apireference.html#documents
 class User(Document):
-    email = EmailField(required=True, unique=True)
     firstname = StringField(required=True)
     lastname = StringField(required=True)
-    usertype = StringField(required=True)
-    userschool = StringField()
     username = StringField(max_length=50, required=True, unique=True)
     password = StringField(required=True)
+    email = EmailField(required=True, unique=True)
+    usertype = StringField(required=True)
+    userschool = StringField()
     subscribed = ListField(ReferenceField("Subvue"))
     created = DateTimeField(required=True, default=datetime.datetime.now())
 
@@ -37,9 +37,9 @@ class User(Document):
             "firstname": self.firstname,
             "lastname": self.lastname,
             "username": self.username,
+            "hashedEmail": hashed_email,
             "usertype": self.usertype,
             "userschool": self.userschool,
-            "hashedEmail": hashed_email,
             "subscribed": [subvue.to_public_json() for subvue in self.subscribed],
             "created": self.created,
         }
