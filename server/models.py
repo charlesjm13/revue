@@ -122,3 +122,49 @@ class Post(Document):
         }
 
         return data
+
+class Course(Document):
+    collegename = StringField(max_length=120, required=True)
+    coursename = StringField(max_length=120, required=True)
+    coursenumber = StringField(max_length=3, required=True)
+    courserating = StringField(max_length=1, required=True)
+    coursepositive = StringField(required=True)
+    coursenegative = StringField(required=True)
+    username = StringField(required=True)
+
+    def to_public_json(self):
+        data = {
+            "id": str(self.id),
+            "collegename": self.collegename,
+            "coursename": self.coursename,
+            "coursenumber": self.coursenumber,
+            "courserating": self.courserating,
+            "coursepositive": self.coursepositive,
+            "coursenegative": self.coursenegative,
+            "username": self.username 
+            
+        }
+
+        return data
+
+class College(Document):
+    collegename = StringField(max_length=120, required=True)
+    academics = StringField(max_length=1, required=True)
+    athletics = StringField(max_length=1, required=True)
+    dorms = StringField(max_length=1, required=True)
+    dining = StringField(max_length=1, required=True)
+    username = StringField(required=True)
+
+    def to_public_json(self):
+        data = {
+            "id": str(self.id),
+            "collegename": self.collegename,
+            "academics": self.academics,
+            "athletics": self.athletics,
+            "dorms": self.dorms,
+            "dining": self.dining,
+            "username": self.username 
+            
+        }
+
+        return data
