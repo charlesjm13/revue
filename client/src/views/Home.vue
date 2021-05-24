@@ -4,7 +4,7 @@
       <h1>WELCOME TO BECS!</h1>    
       <h2>To know your place better</h2>
     </div>
-    <Welcome />
+    <Welcome v-if="!$store.state.isUserLoggedIn"/>
     <div class = "idk" style="padding-top: 20px;">
       <img  src= "./assets/image3.jpg" width="800" height="400">
      
