@@ -63,6 +63,7 @@
 
 <script>
 import Stars from '@/components/Stars'
+import RatingsService from '@/services/RatingsService'
 
 export default {
     name: 'ratings',

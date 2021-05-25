@@ -3,7 +3,7 @@ from schema import Schema, And
 import utils
 from app import app
 from flask import jsonify, request
-from models import Post, User, Comment, Subvue
+from models import Post, User, Comment, Subvue, Course, College
 from mongoengine.errors import ValidationError
 from authorization import login_required
 
@@ -50,6 +50,44 @@ def posts_create(username: str):
         user=user,
         comments=[],
         image=image_filename
+    ).save()
+
+    return jsonify(post.to_public_json())
+
+@app.route("/api/ratings/courses", methods=["POST"])
+@login_required
+def course_ratings_create(username: str):
+    schema = Schema({
+        "collegename": And(str, len, error="Title not specified"),
+        "coursename": And(str, len, error="Title not specified"),
+        "coursenumber": And(str, len, error="Title not specified"),
+        "courserating": And(str, len, error="Title not specified"),
+        "coursepositive": And(str, len, error="Title not specified"),
+        "coursenegative": And(str, len, error="Title not specified")
+
+    })
+    form = {
+        "collegename": request.form.get("collegename"),
+        "coursename": request.form.get("coursename"),
+        "coursenumber": request.form.get("coursenumber"),
+        "courserating": request.form.get("courserating"),
+        "coursepositive": request.form.get("coursepositive"),
+        "coursenegative": request.form.get("coursenegative"),
+
+        
+    }
+    validated = schema.validate(form)
+
+    user = User.objects(username=username).first()
+
+    post = Course(
+        collegename=validated["collegename"],
+        coursename=validated["coursename"],
+        courserating=validated["courserating"],
+        coursepositive=validated["coursepositive"],
+        coursenegative=validated["coursenegative"],
+        user=username
+        
     ).save()
 
     return jsonify(post.to_public_json())

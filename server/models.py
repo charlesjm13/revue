@@ -131,6 +131,7 @@ class Course(Document):
     coursepositive = StringField(required=True)
     coursenegative = StringField(required=True)
     username = StringField(required=True)
+    created = DateTimeField(required=True, default=datetime.datetime.now())
 
     def to_public_json(self):
         data = {
@@ -141,7 +142,8 @@ class Course(Document):
             "courserating": self.courserating,
             "coursepositive": self.coursepositive,
             "coursenegative": self.coursenegative,
-            "username": self.username 
+            "username": self.username,
+            "created": self.created
             
         }
 
@@ -154,6 +156,7 @@ class College(Document):
     dorms = StringField(max_length=1, required=True)
     dining = StringField(max_length=1, required=True)
     username = StringField(required=True)
+    created = DateTimeField(required=True, default=datetime.datetime.now())
 
     def to_public_json(self):
         data = {
@@ -163,7 +166,8 @@ class College(Document):
             "athletics": self.athletics,
             "dorms": self.dorms,
             "dining": self.dining,
-            "username": self.username 
+            "username": self.username,
+            "created": self.created
             
         }
 

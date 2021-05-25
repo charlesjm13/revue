@@ -13,6 +13,7 @@
 
 <script>
 import CollegeRatings from  '@/components/CollegeRatings'
+import RatingsService from '@/services/RatingsService'
 
 export default {
   name: 'home',
