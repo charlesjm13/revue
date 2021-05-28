@@ -63,33 +63,33 @@ def course_ratings_create(username: str):
         "coursenumber": And(str, len, error="Title not specified"),
         "courserating": And(str, len, error="Title not specified"),
         "coursepositive": And(str, len, error="Title not specified"),
-        "coursenegative": And(str, len, error="Title not specified")
+        "coursenegative": And(str, len, error="Title not specified"),
+        "username": And(str, len, error="No Username")
 
     })
     form = {
-        "collegename": request.form.get("collegename"),
-        "coursename": request.form.get("coursename"),
-        "coursenumber": request.form.get("coursenumber"),
-        "courserating": request.form.get("courserating"),
-        "coursepositive": request.form.get("coursepositive"),
-        "coursenegative": request.form.get("coursenegative"),
-
-        
+        "collegename": request.json.get("collegename"),
+        "coursename": request.json.get("coursename"),
+        "coursenumber": request.json.get("coursenumber"),
+        "courserating": request.json.get("courserating"),
+        "coursepositive": request.json.get("coursepositive"),
+        "coursenegative": request.json.get("coursenegative"),
+        "username": request.json.get("username")
     }
+    print(request.json)
+    print(form)
     validated = schema.validate(form)
-
-    user = User.objects(username=username).first()
-
+    print(validated)
+    #user = User.objects(username=username).first()
     post = Course(
         collegename=validated["collegename"],
         coursename=validated["coursename"],
         courserating=validated["courserating"],
         coursepositive=validated["coursepositive"],
         coursenegative=validated["coursenegative"],
-        user=username
-        
+        username=validated["username"]
     ).save()
-
+    print(post)
     return jsonify(post.to_public_json())
 
 

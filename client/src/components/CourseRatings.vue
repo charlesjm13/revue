@@ -87,7 +87,7 @@ export default {
             coursenumber: this.$props.courseNumber,
             courserating: this.courseRating,
             coursepositive: this.coursePos,
-            coursenegative: this.courseNegative,
+            coursenegative: this.courseNeg,
             username: this.$store.state.user.username
           })
           .then(response => {
