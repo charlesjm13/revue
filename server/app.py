@@ -45,6 +45,7 @@ def images_get(filename):
 
 from views.authentication import *  # noqa
 from views.posts import *  # noqa
+from views.qposts import *
 from views.subvues import *  # noqa
 from views.users import *  # noqa
 

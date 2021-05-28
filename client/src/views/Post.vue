@@ -44,9 +44,9 @@
       </div>
     </div>
 
-    <SubvueInfo class="subvue-info" v-if="subvue" :subvue="subvue"></SubvueInfo>
+    <!-- <SubvueInfo class="subvue-info" v-if="subvue" :subvue="subvue"></SubvueInfo> -->
     <!-- Only show it if data was fetched -->
-    <div v-else></div>
+    <!-- <div v-else></div> -->
 
     <CreateButton></CreateButton>
   </div>
@@ -54,16 +54,17 @@
 
 <script>
 import Comment from '@/components/Comment'
-import SubvueInfo from '@/components/SubvueInfo'
+// import SubvueInfo from '@/components/SubvueInfo'
 import CreateButton from '@/components/CreateButton'
 
 import Vote from '@/components/Vote'
-import PostsService from '@/services/PostsService'
+// import PostsService from '@/services/PostsService'
+import QPostService from '@/services/QPostService'
 
 export default {
     name: 'post',
 
-    components: { Comment, Vote, SubvueInfo, CreateButton },
+    components: { Comment, Vote, CreateButton },
 
     data() {
         return {
@@ -71,7 +72,7 @@ export default {
             id: this.$route.params.id,
             title: '',
             user: '',
-            subvue: null,
+            // subvue: null,
             created: '',
             content: '',
             comments: [],
@@ -85,9 +86,9 @@ export default {
     },
 
     methods: {
-        deletePost() {
+        deleteQPost() {
             if (this.deleteVerify) {
-                PostsService.delete(this.id)
+                QPostService.delete(this.id)
                     .then(() => {
                         this.$router.push({ name: 'Home' })
                     })
@@ -100,7 +101,7 @@ export default {
         },
 
         createComment() {
-            PostsService.addComment(this.id, this.newCommentContent)
+            QPostService.addComment(this.id, this.newCommentContent)
                 .then(response => {
                     this.comments = response.data
                     this.newCommentContent = ''
@@ -113,7 +114,7 @@ export default {
     },
 
     mounted() {
-        PostsService.item(this.id)
+        QPostService.item(this.id)
             .then(response => {
                 this.title = response.data.title
                 this.user = response.data.user
@@ -122,7 +123,7 @@ export default {
                 this.comments = response.data.comments
                 this.upvotes = response.data.upvotes
                 this.downvotes = response.data.downvotes
-                this.subvue = response.data.subvue
+                // this.subvue = response.data.subvue
             })
             .catch(e => {
                 this.error = e.response.data.error

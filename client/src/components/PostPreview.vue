@@ -1,24 +1,13 @@
 <template lang="html">
   <div class="post-preview">
-    <router-link :to="{name:'Post', params: {subvuePermalink: post.subvue.permalink, id: post.id}}" class="image-area">
-      <div :style="'background-image: url(http://localhost:5000/api/file/' + post.image + ');'" class="image"></div>
-    </router-link>
-    <Vote :upvotes="post.upvotes" :downvotes="post.downvotes" :postId="post.id" @error="(value) => {error = value}"></Vote>
-    <router-link :to="{name:'Post', params: {subvuePermalink: post.subvue.permalink, id: post.id}}" class="body-area">
-      <h3><slot></slot></h3>
-      <p>
-
-        <span>on {{ post.created }}</span>
-        <span v-show="!hideUser">&nbsp;by <span class="blue-highlight">u/{{ post.user.username }}</span></span>
-        <span v-show="!hideSubvue">&nbsp;in <span class="blue-highlight">s/{{ post.subvue.name }}</span></span>
-        </p>
-      <p>{{ description }}</p>
-    </router-link>
+    <!-- <Vote :upvotes="post.upvotes" :downvotes="post.downvotes" :postId="post.id" @error="(value) => {error = value}"></Vote> -->
+    <p>{{ title }}</p>
+      <p>{{ content }}</p>
   </div>
 </template>
 
 <script>
-import Vote from '@/components/Vote'
+// import Vote from '@/components/Vote'
 
 export default {
     name: 'post-preview',
@@ -33,11 +22,17 @@ export default {
         }
     },
 
-    components: { Vote },
+    // components: { Vote },
 
     computed: {
         description() {
             return this.post.content.slice(0, 750) + '...'
+        },
+        content(){
+            return this.post.content
+        },
+        title(){
+            return this.post.title
         }
     }
 }

@@ -37,6 +37,7 @@ const routes = [
     name: 'QnA',
     component: () => import(/* webpackChunkName: "signup" */ '@/views/QnA')
   },
+
     {
         path: '/:username/profile',
         name: 'Profile',
