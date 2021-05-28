@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="ratings" style="background: #f0ead6; margin:auto;">
+  <div class="ratings" style="background: #f8dbd5; margin:auto;">
     <div>
       <br>
       <div>
@@ -17,13 +17,12 @@
         <input name="courseNeg" type="text" v-model="courseNeg">
       </form>
       <br>
-      <button v-if="this.$props.courseNumber.length == 3 
+      <Button v-if="this.$props.courseNumber.length == 3 
                     && this.courseRating != 0 
                     && this.coursePos != '' 
                     && this.courseNeg != ''"
-                    v-on:click="reviewSubmitted = true"
-                    >
-                      Submit A Review</button>
+                    v-on:click="reviewSubmitted = true"> Submit A Review </Button>
+
       <br>
       <br>
       <div v-if="reviewSubmitted">
@@ -84,6 +83,18 @@ export default {
 </script>
 
 <style>
+
+.ratings form{
+  max-width: 700px;
+    margin: 30px auto;
+    overflow: auto;
+    min-height:200px;
+    border: 3px solid green;
+    padding: 20px;
+    border-radius: 7px;
+    text-align:  left;
+
+}
 input{
   background: #FAF7F2;
 }

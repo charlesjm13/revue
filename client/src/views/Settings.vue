@@ -1,7 +1,7 @@
 <template>
-  <div class="settings">
+  <div class="items">
       <form>
-          <h1 style="color:darkgrayslate">Settings</h1>
+          <h1 style="color:black">Settings</h1>
           <br><br>
           <label><strong>Change first name: &nbsp;</strong></label><!--Allows input for last name-->
           <input v-model="fname" placeholder="First Name"><br><br>
@@ -19,6 +19,7 @@
               <option>Prospective student</option>
               <option>Current student</option>
           </select><br><br>
+         <!-- <Dropdown v-model="stype" :options="studenttypes" optionLabel="type" placeholder="Select a Student Type" />-->
           <label><strong>Change major/minor: &nbsp;</strong></label> <!--Allows input for major/minor-->
           <input v-model="mm" placeholder="Format: 'Major/Minor'"><br><br>
           <label><strong>Change clubs/interests: </strong></label><!--Allows input for clubs/interests-->
@@ -39,7 +40,8 @@
           <div v-if="returnVal() > 0">
               <label><strong><u>Your tags:</u></strong></label>
               <div v-for="tag in chosenTags" :key="tag">
-                  <button @click="removeFromTags(tag)" style="padding: 5px 5px 5px 0px;">Remove </button>
+                  <Button @click="removeFromTags(tag)" style="padding: 5px 5px 5px 0px;">Remove </Button>
+
                   <label>&nbsp; {{tag}}</label>
               </div>
           </div><br />
@@ -115,6 +117,24 @@ export default {
 
 <style>
   form{
-    align-content: center;
+    max-width: 700px;
+    margin: 30px auto;
+    overflow: auto;
+    min-height:400px;
+    border: 3px solid green;
+    padding: 20px;
+    border-radius: 7px;
+    text-align:  left;
   }
+
+  form input{
+    width: 100%;
+    clear: both;
+  }
+
+  form label{
+    font-family: 'Verdana', sans-serif;
+    font-size:20px;
+  }
+
 </style>

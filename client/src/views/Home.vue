@@ -7,8 +7,11 @@
     <Welcome />
     <div class = "idk" style="padding-top: 20px;">
       <img  src= "./assets/image3.jpg" width="800" height="400">
-     
+         <footer>
+      <p> add stuff </p>
+  </footer>
     </div>
+
   
 
     <!-- <PostPreview v-for="post in posts" :key="post.id" :post="post">
@@ -63,5 +66,13 @@ h2{
 h1{
   font-size: 35px;
   color:darkslategray
+}
+footer{
+  width: 100%;
+  background-color:color;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
 }
 </style>
