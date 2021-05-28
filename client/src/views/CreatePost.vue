@@ -4,25 +4,15 @@
     <form @submit.prevent="create" enctype="multipart/form-data">
       <p class="error">{{ error }}</p>
       <input v-model="title" type="text" placeholder="Title" ref="title">
-      <input v-model="subvue" type="text" placeholder="Subvue"> 
-      <div v-if="imagePreview" id="image-preview" :style="'background-image: url(' + imagePreview + ')'"></div>
-      <div id="image-upload">
-        <p>
-          <span v-if="!image">Drag your image here to begin<br> or click to browse</span>
-          <span v-else>
-            {{ image.name }}
-          </span>
-        </p>
-        <input type="file" @change="fileChanged" accept="image/*">
-      </div>
-      <textarea v-model="content" name="name" placeholder="Content" rows="25" cols="80"></textarea>
+      <textarea v-model="content" name="name" placeholder="Content" rows="10" cols="80"></textarea>
       <input class="button" type="submit" value="Create post">
     </form>
   </div>
 </template>
 
 <script>
-import PostsService from '@/services/PostsService'
+// import PostsService from '@/services/QPostService'
+import QPostService from '@/services/QPostService'
 
 export default {
     name: 'create-post',
@@ -30,11 +20,11 @@ export default {
     data() {
         return {
             title: '',
-             subvue: '',
+            //  subvue: '',
             content: '',
             error: null,
-            image: null,
-            imagePreview: null,
+            // image: null,
+            // imagePreview: null,
         }
     },
 
@@ -42,37 +32,37 @@ export default {
         create() {
             var formData = new FormData();
             formData.append('title', this.title)
-             formData.append('subvue', this.subvue)
+            //  formData.append('subvue', this.subvue)
             formData.append('content', this.content)
             console.log(formData)
 
             // If photo has been set
-            if (this.image) {
-                formData.append('image', this.image, this.image.name)
-            }
+            // if (this.image) {
+            //     formData.append('image', this.image, this.image.name)
+            // }
 
-            PostsService.create(formData)
-                .then(response => {
-                    this.$router.push({
-                        name: 'Post',
-                        params: { id: response.data.id } , subvuePermalink: response.data.subvue.permalink
-                    })
-                })
-                .catch(error => {
-                    this.error = error.response.data.error
-                })
+            QPostService.create(formData)
+                 .then(response => {
+                     this.$router.push({
+                        name: 'Qpost',
+                          params: { id: response.data.id } 
+                     })
+                 })
+                 .catch(error => {
+                     this.error = error.response.data.error
+                 })
         },
 
-        fileChanged(e) {
-            this.image = e.target.files[0]
+        // fileChanged(e) {
+        //     this.image = e.target.files[0]
 
-            // Show image preview
-            var reader = new FileReader();
-            reader.onload = (e) => {
-                this.imagePreview = e.target.result;
-            };
-            reader.readAsDataURL(this.image);
-        }
+        //     // Show image preview
+        //     var reader = new FileReader();
+        //     reader.onload = (e) => {
+        //         this.imagePreview = e.target.result;
+        //     };
+        //     reader.readAsDataURL(this.image);
+        // }
     },
 
     mounted() {

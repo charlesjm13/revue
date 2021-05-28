@@ -1,5 +1,5 @@
 <template>
-  <div class="home container">
+  <div class="home_container">
     <div class="txtcenter">
       <h1>ABOUT US</h1>
       <h2>We are a team of college students who want to help prospective students engage more with the community that they are going into.</h2>
@@ -17,6 +17,10 @@ export default {
 </script>
 
 <style>
+.home_container{
+ background: linear-gradient(#E0CBA8,#90ace7); 
+  
+}
 .txtcenter {
   text-align: center;
 }

@@ -132,7 +132,7 @@ class Qpost(Document):
     content = StringField(max_length=5000)
     comments = ListField(EmbeddedDocumentField(Comment))
     created = DateTimeField(required=True, default=datetime.datetime.now())
-    image = StringField()
+    # image = StringField()
     upvotes = ListField(ReferenceField(User, reverse_delete_rule=CASCADE))
     downvotes = ListField(ReferenceField(User, reverse_delete_rule=CASCADE))
 
@@ -147,7 +147,7 @@ class Qpost(Document):
             },
             "comments": [comment.to_public_json() for comment in self.comments][::-1],
             "created": self.created,
-            "image": self.image,
+            # "image": self.image,
             "upvotes": [{
                 "id": str(upvote.id),
                 "username": upvote.username

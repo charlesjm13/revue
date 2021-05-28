@@ -96,7 +96,7 @@ nav a:hover, .dropdown:hover .dropbtn {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f0ead6;
+  background-color: #E0CBA8;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -112,7 +112,7 @@ nav a:hover, .dropdown:hover .dropbtn {
 }
 
 .dropdown-content a:hover {
-  background-color: #f0ead6;
+  background-color: #E0CBA8;
 }
 
 .dropdown:hover .dropdown-content {

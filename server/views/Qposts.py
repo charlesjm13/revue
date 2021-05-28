@@ -3,7 +3,7 @@ from schema import Schema, And
 import utils
 from app import app
 from flask import jsonify, request
-from models import Qpost, User, Comment, Subvue
+from models import Qpost, User, Comment
 from mongoengine.errors import ValidationError
 from authorization import login_required
 
@@ -11,6 +11,7 @@ from authorization import login_required
 @app.route("/api/qposts")
 def qposts_index():
     qposts = Qpost.objects().order_by("-created")
+    print (jsonify([qpost.to_public_json() for qpost in qposts]))
     return jsonify([qpost.to_public_json() for qpost in qposts])
 
 
@@ -27,26 +28,14 @@ def qposts_create(username: str):
     }
     validated = schema.validate(form)
 
-    # subvue_permalink = validated["subvue"]
-    # subvue = Subvue.objects(permalink__iexact=subvue_permalink).first()
-    # if not subvue:
-    #     return jsonify({"error": f"Subvue '{subvue_permalink}' not found"}), 404
-
     user = User.objects(username=username).first()
-
-    image = request.files.get("image")
-    if image:
-        image_filename = utils.save_image()
-
-    else:
-        image_filename = None
 
     qpost = Qpost(
         title=validated["title"],
         content=validated["content"],
         user=user,
         comments=[],
-        image=image_filename
+        # image=image_filename
     ).save()
 
     return jsonify(qpost.to_public_json())
