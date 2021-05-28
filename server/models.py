@@ -135,27 +135,52 @@ class Qpost(Document):
     # image = StringField()
     upvotes = ListField(ReferenceField(User, reverse_delete_rule=CASCADE))
     downvotes = ListField(ReferenceField(User, reverse_delete_rule=CASCADE))
+class Course(Document):
+    collegename = StringField(max_length=120, required=True)
+    coursename = StringField(max_length=120, required=True)
+    coursenumber = StringField(max_length=3, required=True)
+    courserating = StringField(max_length=1, required=True)
+    coursepositive = StringField(required=True)
+    coursenegative = StringField(required=True)
+    username = StringField(required=True)
+    created = DateTimeField(required=True, default=datetime.datetime.now())
 
     def to_public_json(self):
         data = {
             "id": str(self.id),
-            "title": self.title,
-            "content": self.content,
-            "user": {
-                "id": str(self.user.id),
-                "username": self.user.username
-            },
-            "comments": [comment.to_public_json() for comment in self.comments][::-1],
-            "created": self.created,
-            # "image": self.image,
-            "upvotes": [{
-                "id": str(upvote.id),
-                "username": upvote.username
-            } for upvote in self.upvotes],
-            "downvotes": [{
-                "id": str(downvote.id),
-                "username": downvote.username
-            } for downvote in self.downvotes],
+            "collegename": self.collegename,
+            "coursename": self.coursename,
+            "coursenumber": self.coursenumber,
+            "courserating": self.courserating,
+            "coursepositive": self.coursepositive,
+            "coursenegative": self.coursenegative,
+            "username": self.username,
+            "created": self.created
+            
+        }
+
+        return data
+
+class College(Document):
+    collegename = StringField(max_length=120, required=True)
+    academics = StringField(max_length=1, required=True)
+    athletics = StringField(max_length=1, required=True)
+    dorms = StringField(max_length=1, required=True)
+    dining = StringField(max_length=1, required=True)
+    username = StringField(required=True)
+    created = DateTimeField(required=True, default=datetime.datetime.now())
+
+    def to_public_json(self):
+        data = {
+            "id": str(self.id),
+            "collegename": self.collegename,
+            "academics": self.academics,
+            "athletics": self.athletics,
+            "dorms": self.dorms,
+            "dining": self.dining,
+            "username": self.username,
+            "created": self.created
+            
         }
 
         return data

@@ -23,7 +23,7 @@
                       && this.athleticsStars!=0
                       && this.dormsStars!=0
                       && this.diningStars!=0"
-                      v-on:click="reviewSubmitted=true">
+                      v-on:click="reviewSubmitted=true; createRating()">
                       Submit A Review</Button>
     </div>
   </div>
@@ -63,6 +63,7 @@
 
 <script>
 import Stars from '@/components/Stars'
+import RatingsService from '@/services/RatingsService'
 
 export default {
     name: 'ratings',
@@ -76,9 +77,12 @@ export default {
         athleticsStars: '',
         dormsStars: '',
         diningStars: '',
-        reviewSubmitted: false
-      }
+        reviewSubmitted: false,
+        ratings: null,
+      } 
     },
+
+
     methods: {
       updateAcademicsStars(stars){
         this.academicStars=stars;
@@ -91,7 +95,23 @@ export default {
       },
       updateDiningStars(stars){
         this.diningStars=stars;
-      }
+      },
+      createRating() {
+          RatingsService.createCollegeRatings({
+            collegename: this.$props.selectedCollege.name,
+            academics: this.academicStars,
+            athletics: this.athleticsStars, 
+            dorms: this.dormsStars,
+            dining: this.diningStars,
+            username: this.$store.state.user.username
+          })
+          .then(response => {
+            console.log(response.data)
+          })
+          .catch(e => {
+            this.error = e.response.data.error;
+          })
+        }
     }
 }
 </script>
