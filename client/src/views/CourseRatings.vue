@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="home-container" style="margin: auto; text-align: center; width: 1000px;">
+  <div class="home-container" style="margin: auto; text-align: center; width: 1000px; border-style: solid;">
     <h1 style="color:darkgrayslate">Course Ratings</h1>
         <div>
     <Dropdown v-model="selectedCollege" :options="colleges" optionLabel="name" placeholder="Select a college" />
@@ -15,6 +15,20 @@
     <div style="margin: auto; text-align:center; padding-top: 10px;">
     <CourseRatings :colleges="colleges" :courseNumber="courseNumber" :courseField="courseField" :selectedCollege="selectedCollege"></CourseRatings>
     </div>
+  </div>
+  <br>
+  <div v-for="rating in ratings" :key="rating.id" :rating="rating" style="margin: auto; text-align: center; padding: 0px 200px 20px 200px; border-style: solid;">
+    Reviewed by: {{ rating.username }}
+    <br>
+    {{ rating.collegename }}
+    <br>
+    {{rating.coursename}} {{ rating.coursenumber }}
+    <br>
+    Course Rating: {{ rating.courserating }}
+    <br>
+    Course Positive: {{rating.coursepositive}} 
+    <br>
+    Course Negative: {{rating.coursenegative}}
   </div>
 </template>
 
@@ -33,6 +47,7 @@ export default {
       colleges: [
         {name: 'Knox College', code: 'KNOX'}
       ],
+      ratings: null,
       courses: [
         {name: 'Africana Studies', code: 'AFST'},
         {name: 'American Studies', code: 'AMER'},
@@ -80,7 +95,12 @@ export default {
         {name: 'Theatre', code: 'THEAT'}
       ]
     }
-  }
+  },
+   mounted() {
+      RatingsService.getCourseRatings().then((response) => {
+        this.ratings = response.data;
+      });
+    }
 }
 </script>
 

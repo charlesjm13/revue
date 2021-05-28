@@ -73,7 +73,8 @@ export default {
         courseNeg: '',
         cNumber: this.$props.courseNumber,
         courseRating: '',
-        reviewSubmitted: false
+        reviewSubmitted: false,
+        ratings: null,
       } 
     },
     methods: {
