@@ -42,15 +42,26 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
-
+ <!-- <div class="cards">
+      <PostPreview class="post_card" v-for="post in posts" :key="post" :post="post">
+        <h1> {{post.name}} </h1>
+      </PostPreview>
+    </div>
    
     <br />
    
     <PostPreview v-for="post in posts" :key="post" :post="post">
-      <!-- {{ post.title }} -->
+      {{ post.title }}
     </PostPreview>
+    <CreateButton></CreateButton>
+  </div> -->
+    <PostPreview class = "block" v-for="post in posts" :key="post.id" :post="post">
+      {{ post.title }}
+    </PostPreview>>
+
     <CreateButton></CreateButton>
   </div>
 </template>
@@ -61,12 +72,28 @@ import QPostService from "@/services/QPostService";
 import CreateButton from "@/components/CreateButton";
 
 export default {
+  // name: "post-preview"
+
+  // props:{
+  //   grid{},
+  //   hideUser:{
+  //     default: false;
+  //   },
+
+  // },
+
+  // computed:{
+  //   description(){
+  //     return this.postdescription.slice(0,750)
+  //   },
+  // },
+
   name: "QnA",
   components: { PostPreview, CreateButton },
   data() {
     return {
        posts: null,
-      Pos: '',
+      // Pos: '',
     };
   },
 
@@ -74,7 +101,11 @@ export default {
     QPostService.index().then((response) => {
       this.posts = response.data;
       console.log(this.posts);
-    });
+    })
+    .catch(e => {
+      this.error = e.response.data.error
+    })
+    ;
   },
 };
 
@@ -155,5 +186,23 @@ textarea {
   font-size: 14px;
   border-radius: 2px;
   width: 50px;
+}
+.cards{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:20px;
+  margin-top: 20px;
+
+}
+.block {
+  background: #ffffff;
+  border: 1px solid rgb(0, 0, 0);
+  text-align: center;
+  padding: 25px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.block:hover{
+  background: #868686;
 }
 </style>

@@ -3,7 +3,7 @@ from schema import Schema, And
 import utils
 from app import app
 from flask import jsonify, request
-from models import Post, User, Comment, Subvue
+from models import Post, User, Comment, Subvue, Course, College
 from mongoengine.errors import ValidationError
 from authorization import login_required
 
@@ -54,6 +54,90 @@ def posts_create(username: str):
 
     return jsonify(post.to_public_json())
 
+@app.route("/api/ratings/courses", methods=["POST"])
+@login_required
+def course_ratings_create(username: str):
+    schema = Schema({
+        "collegename": And(str, len, error="No College Name"),
+        "coursename": And(str, len, error="No Course Name"),
+        "coursenumber": And(str, len, error="No Course Number"),
+        "courserating": And(str, len, error="No Course Rating"),
+        "coursepositive": And(str, len, error="No Course Positive"),
+        "coursenegative": And(str, len, error="No Course Negative"),
+        "username": And(str, len, error="No Username")
+
+    })
+    form = {
+        "collegename": request.json.get("collegename"),
+        "coursename": request.json.get("coursename"),
+        "coursenumber": request.json.get("coursenumber"),
+        "courserating": request.json.get("courserating"),
+        "coursepositive": request.json.get("coursepositive"),
+        "coursenegative": request.json.get("coursenegative"),
+        "username": request.json.get("username")
+    }
+    print(request.json)
+    print(form)
+    validated = schema.validate(form)
+    #print(validated)
+    #user = User.objects(username=username).first()
+    post = Course(
+        collegename=validated["collegename"],
+        coursename=validated["coursename"],
+        coursenumber=validated['coursenumber'],
+        courserating=validated["courserating"],
+        coursepositive=validated["coursepositive"],
+        coursenegative=validated["coursenegative"],
+        username=validated["username"]
+    ).save()
+    print(post)
+    return jsonify(post.to_public_json())
+
+@app.route("/api/ratings/courses")
+def courses_ratings_getCourseRatings():
+    ratings = Course.objects().order_by("-created")
+    return jsonify([rating.to_public_json() for rating in ratings])
+
+@app.route("/api/ratings/colleges", methods=["POST"])
+@login_required
+def college_ratings_create(username: str):
+    schema = Schema({
+        "collegename": And(str, len, error="No College Name"),
+        "academics": And(str, len, error="No Academics"),
+        "athletics": And(str, len, error="No Athletics"),
+        "dorms": And(str, len, error="No Dorms"),
+        "dining": And(str, len, error="No Dining"),
+        "username": And(str, len, error="No Username")
+
+    })
+    form = {
+        "collegename": request.json.get("collegename"),
+        "academics": request.json.get("academics"),
+        "athletics": request.json.get("athletics"),
+        "dorms": request.json.get("dorms"),
+        "dining": request.json.get("dining"),
+        "username": request.json.get("username")
+    }
+    print(request.json)
+    print(form)
+    validated = schema.validate(form)
+    #print(validated)
+    #user = User.objects(username=username).first()
+    post = College(
+        collegename=validated["collegename"],
+        academics=validated["academics"],
+        athletics=validated['athletics'],
+        dorms=validated["dorms"],
+        dining=validated["dining"],
+        username=validated["username"]
+    ).save()
+    print(post)
+    return jsonify(post.to_public_json())
+
+@app.route("/api/ratings/colleges")
+def college_ratings_getCollegeRatings():
+    ratings = College.objects().order_by("-created")
+    return jsonify([rating.to_public_json() for rating in ratings])    
 
 @app.route("/api/posts/id/<string:id>")
 def posts_item(id: str):

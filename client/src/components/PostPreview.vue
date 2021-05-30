@@ -1,13 +1,31 @@
 <template lang="html">
   <div class="post-preview">
-    <!-- <Vote :upvotes="post.upvotes" :downvotes="post.downvotes" :postId="post.id" @error="(value) => {error = value}"></Vote> -->
-    <p>{{ title }}</p>
-      <p>{{ content }}</p>
+    <Vote :upvotes="post.upvotes" :downvotes="post.downvotes" :postId="post.id" @error="(value) => {error = value}"></Vote>
+    <router-link :to="{name:'Post', params: {id: post.id}}" class="body-area">
+        <h3><slot></slot></h3>
+      <p>
+        <span>on {{ post.created }}</span>
+        <span v-show="!hideUser">&nbsp;by <span class="blue-highlight">u/{{ post.user.username }}</span></span>
+        </p>
+       <p>{{ post.content }}</p>
+    </router-link>
   </div>
+  <!-- <div class="post-preview">
+    <Vote :upvotes="post.upvotes" :downvotes="post.downvotes" :postId="post.id" @error="(value) => {error = value}"></Vote>
+    <router-link :to="{name:'Post', params: {id: post.id}}" class="body-area">
+      <h3><slot></slot></h3>
+      <p>
+        <span>on {{ post.created }}</span>
+        <span v-show="!hideUser">&nbsp;by <span class="blue-highlight">u/{{ post.user.username }}</span></span>
+        </p>
+      <p>{{ title }}</p>
+       <p>{{ content }}</p>
+    </router-link>
+  </div> -->
 </template>
 
 <script>
-// import Vote from '@/components/Vote'
+import Vote from '@/components/Vote'
 
 export default {
     name: 'post-preview',
@@ -16,24 +34,21 @@ export default {
         post: {},
         hideUser: {
             default: false
-        },
-        hideSubvue: {
-            default: false
         }
     },
 
-    // components: { Vote },
+    components: { Vote },
 
     computed: {
         description() {
             return this.post.content.slice(0, 750) + '...'
         },
-        content(){
-            return this.post.content
-        },
-        title(){
-            return this.post.title
-        }
+        // content(){
+        //     return this.post.content
+        // },
+        // title(){
+        //     return this.post.title
+        // }
     }
 }
 </script>
@@ -45,11 +60,12 @@ p {
 
 .post-preview {
     height: 150px;
-    margin-bottom: 25px;
+    margin-bottom: 0px;
     display: block;
     color: black;
     display: grid;
-    grid-template-columns: 3fr 1fr 15fr;
+    grid-template-columns: 5fr 100fr 15fr;
+    /* background: cyan; */
 }
 
 .image {

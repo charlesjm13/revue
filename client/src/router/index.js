@@ -56,7 +56,8 @@ const routes = [
   },
 
   {
-    path: '/s/:subvuePermalink/:id',
+    // path: '/s/:subvuePermalink/:id',
+    path: '/p/:id',
     name: 'Post',
     component: () => import(/* webpackChunkName: "post" */ '@/views/Post')
   },

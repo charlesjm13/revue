@@ -2,34 +2,34 @@ import Api from '@/services/Api'
 
 export default {
   index() {
-    return Api().get('posts')
+    return Api().get('qposts')
   },
 
   create(post) {
-    return Api().post('posts', post)
+    return Api().post('qposts', post)
   },
 
   delete(id) {
-    return Api().delete('posts/id/' + id)
+    return Api().delete('qposts/id/' + id)
   },
 
   item(id) {
-    return Api().get('posts/id/' + id)
+    return Api().get('qposts/id/' + id)
   },
 
   user(username) {
-    return Api().get('posts/user/' + username)
+    return Api().get('qposts/user/' + username)
   },
 
   addComment(postId, commentContent) {
-    return Api().post('posts/' + postId + '/comments', { content: commentContent })
+    return Api().post('qposts/' + postId + '/comments', { content: commentContent })
   },
 
   upVote(postId) {
-    return Api().post('posts/' + postId + '/upvote')
+    return Api().post('qposts/' + postId + '/upvote')
   },
 
   downVote(postId) {
-    return Api().post('posts/' + postId + '/downvote')
+    return Api().post('qposts/' + postId + '/downvote')
   }
 }
