@@ -26,6 +26,10 @@ class User(Document):
     email = EmailField(required=True, unique=True)
     usertype = StringField(required=True)
     userschool = StringField()
+    usermajor = StringField()
+    userinterests = StringField()
+    userbio = StringField()
+    
     subscribed = ListField(ReferenceField("Subvue"))
     created = DateTimeField(required=True, default=datetime.datetime.now())
 
@@ -40,6 +44,9 @@ class User(Document):
             "hashedEmail": hashed_email,
             "usertype": self.usertype,
             "userschool": self.userschool,
+            "usermajor": self.usermajor,
+            "userinterests": self.userinterests,
+            "userbio": self.userbio,
             "subscribed": [subvue.to_public_json() for subvue in self.subscribed],
             "created": self.created,
         }
