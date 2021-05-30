@@ -1,3 +1,4 @@
+
 import { createRouter, createWebHistory } from 'vue-router';
 
 import Home from '@/views/Home'
@@ -47,6 +48,11 @@ const routes = [
     path: '/s/:name',
     name: 'Subvue',
     component: () => import(/* webpackChunkName: "subvue" */ '@/views/Subvue')
+  },
+  {
+    path: '/SchoolSelector',
+    name: 'SchoolSelector',
+    component: () => import(/* webpackChunkName: "subvue" */ '@/views/SchoolSelector')
   },
 
   {

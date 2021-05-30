@@ -6,7 +6,7 @@
       <h1>WELCOME TO BECS!</h1>    
       <h2>To know your place better</h2>
     </div>
-    <Welcome />
+    <Welcome v-if="!$store.state.isUserLoggedIn"/>
     <div class = "idk" style="padding-top: 20px;">
       <!-- <img  src= "./assets/image3.jpg" width="800" height="400"> -->
       </div>
@@ -17,7 +17,7 @@
     </div>
     <div class="card card2">
       <h5> Explore </h5>
-      <p> Explore your ineterests</p>
+      <p> Explore your interests</p>
     </div>
     <div class="card card3">
       <h5> Discover </h5>
@@ -256,4 +256,12 @@ color: rgb(255, 255, 255);
 #radio3 :checked ~ .navigation-auto .auto-btn3 {
   background: #40d3dc;
 } 
+footer{
+  width: 100%;
+  background-color:color;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}
 </style>

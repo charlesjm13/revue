@@ -1,12 +1,18 @@
 import Api from '@/services/Api'
 
 export default {
-  signup (credentials) {
-    // GUIDE: An api call. This function takes an argument, credentials, and tries to sign up with it on the server
-    return Api().post('signup', credentials)
-  },
+    signup(credentials) {
+        // GUIDE: An api call. This function takes an argument, credentials, and tries to sign up with it on the server
+        return Api().post('signup', credentials)
+    },
 
-  login (credentials) {
-    return Api().post('login', credentials)
-  }
+    login(credentials) {
+        return Api().post('login', credentials)
+    },
+
+    change(credentials) {
+        return Api().post('change', credentials)
+    }
+
 }
+

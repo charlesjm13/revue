@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="ratings" style="background: #f0ead6; margin:auto;">
+  <div class="ratings" style="background: #f8dbd5; margin:auto;">
     <div>
       <br>
       <div>
@@ -17,11 +17,11 @@
         <input name="courseNeg" type="text" v-model="courseNeg">
       </form>
       <br>
-      <button v-if="this.$props.courseNumber.length == 3 
+      <Button v-if="this.$props.courseNumber.length == 3 
                     && this.courseRating != 0 
                     && this.coursePos != '' 
                     && this.courseNeg != ''"
-                    v-on:click="reviewSubmitted = true"
+                    v-on:click="reviewSubmitted = true; createRating()"
                     >
                       Submit A Review</button>
       <br>
@@ -61,6 +61,7 @@
 
 <script>
 import Stars from '@/components/Stars'
+import RatingsService from '@/services/RatingsService'
 
 export default {
     name: 'ratings',
@@ -72,18 +73,48 @@ export default {
         courseNeg: '',
         cNumber: this.$props.courseNumber,
         courseRating: '',
-        reviewSubmitted: false
+        reviewSubmitted: false,
+        ratings: null,
       } 
     },
     methods: {
       updateStars (stars) {
         this.courseRating = stars;
-      }
-    }
+      },
+      createRating() {
+          RatingsService.createCourseRatings({
+            collegename: this.$props.selectedCollege.name,
+            coursename: this.$props.courseField.name,
+            coursenumber: this.$props.courseNumber,
+            courserating: this.courseRating,
+            coursepositive: this.coursePos,
+            coursenegative: this.courseNeg,
+            username: this.$store.state.user.username
+          })
+          .then(response => {
+            console.log(response.data)
+          })
+          .catch(e => {
+            this.error = e.response.data.error;
+          })
+        }
+  },
 }
 </script>
 
 <style>
+
+.ratings form{
+  max-width: 700px;
+    margin: 30px auto;
+    overflow: auto;
+    min-height:200px;
+    border: 3px solid green;
+    padding: 20px;
+    border-radius: 7px;
+    text-align:  left;
+
+}
 input{
   background: #FAF7F2;
 }

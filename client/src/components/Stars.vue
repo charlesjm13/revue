@@ -61,28 +61,28 @@ export default {
     emits: ['clicked'],
     data() {
         return {
-            numStars: 0
+            numStars: "0"
         }
     },
     methods: {
         setOne() {
-            this.numStars = 1;
+            this.numStars = "1";
             this.$emit('clicked', this.numStars)
         },
         setTwo() {
-            this.numStars = 2;
+            this.numStars = "2";
             this.$emit('clicked', this.numStars)
         },
         setThree() {
-            this.numStars = 3;
+            this.numStars = "3";
             this.$emit('clicked', this.numStars)
         },
         setFour() {
-            this.numStars = 4;
+            this.numStars = "4";
             this.$emit('clicked', this.numStars)
         },
         setFive() {
-            this.numStars = 5;
+            this.numStars = "5";
             this.$emit('clicked', this.numStars)
         }
     }

@@ -1,30 +1,20 @@
 <template>
     <header style="margin: auto; text-align:center;">
-        <SignUpButton style="font-size: 20px;" text="Sign Up" color="#779FA1" />
-        <SignInButton style="font-size: 20px;" text="Sign In" color="#FF6542" />
+        <SignUpButton style="font-size: 18px;"> </SignUpButton>
+        <SignInButton style="font-size: 18px;"> </SignInButton>
+
     </header>
+
+    
 </template>
 
 <script>
-    import SignUpButton from '@/components/Signupbutton'
-    import SignInButton from '@/components/Signinbutton'
+    import SignUpButton from '@/components/Signupbutton.vue'
+    import SignInButton from '@/components/Signinbutton.vue'
+
     export default {
         name: 'welcome',
         components: {SignUpButton, SignInButton}    
     }
-</script>
 
-<style scoped lang="css">
-   .buttons {
-    font-family: 'Verdana', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    align-items: center;
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #f0ead6;
-}
-</style>
+</script>
