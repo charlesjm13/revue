@@ -2,9 +2,13 @@
   <div class="school-selector">
     <h1> SchoolSelector</h1>
     <li v-for="knox in schools" :key="knox.id" :knox="knox">
-      {{knox["school.name"]}}
+      <h2>{{knox["school.name"]}}</h2>
+      <p>State: {{knox["school.state"]}}</p>
+      <p>City: {{knox["school.city"]}}</p>
+      <p>Official Website: {{knox["school.school_url"]}}</p>
     </li>
-
+    <h3 style="color:black"> All college information obtained from the US Department of Education's College Scorecard API.</h3>
+    <a href="https://collegescorecard.ed.gov/data/documentation/"> Link to API documentation </a>
   </div>
 </template>
 
@@ -45,9 +49,18 @@ export default {
 </script>
 
 <style scoped lang="css">
-.school-selector {
-   width: 1300px;
-}
+
+.school-selector{
+    max-width: 700px;
+    margin: 30px auto;
+    overflow: auto;
+    min-height:400px;
+    border: 3px solid green;
+    padding: 20px;
+    border-radius: 7px;
+    text-align:  center;
+  }
+
 .home-container {
    height: 250px;
     margin-bottom: 25px;
