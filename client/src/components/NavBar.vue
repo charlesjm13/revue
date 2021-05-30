@@ -28,7 +28,8 @@
     <router-link v-if="$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'Profile', params: { username: $store.state.user.username } }">{{ $store.state.user.username }}</router-link>
     <!--
     <router-link v-if="$store.state.isUserLoggedIn" style="float:right" :to="{ name: 'Settings', params: {username: $store.state.user.username} }">Settings</router-link>
-        -->
+    <router-link v-if="$store.state.isUserLoggedIn" style="float:left" :to="{ name: 'SchoolSelector', params: {} }">School Selector</router-link>
+
   </nav>
 </template>
 
@@ -49,7 +50,7 @@ export default {
 <style scoped lang="css">
 nav {
   overflow: hidden;
-  background-color: #88498F;
+  background-color: #006653;
   font-family: 'Courier New', Courier, monospace;
 }
 

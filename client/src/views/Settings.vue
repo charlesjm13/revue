@@ -140,9 +140,33 @@
 </script>
 
 <style>
+<<<<<<< HEAD
     form {
         align-content: center;
     }
+=======
+  form{
+    max-width: 700px;
+    margin: 30px auto;
+    overflow: auto;
+    min-height:400px;
+    border: 3px solid green;
+    padding: 20px;
+    border-radius: 7px;
+    text-align:  left;
+  }
+
+  form input{
+    width: 100%;
+    clear: both;
+  }
+
+  form label{
+    font-family: 'Verdana', sans-serif;
+    font-size:20px;
+  }
+
+>>>>>>> shahm
 </style>
 
 
