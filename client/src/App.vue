@@ -32,9 +32,8 @@ export default {
     height: 100%;
     min-height: 100%;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
-    background-color: #f0ead6;
+    background-color: #f8dbd5;
 }
 h2 {
     text-align:center;
