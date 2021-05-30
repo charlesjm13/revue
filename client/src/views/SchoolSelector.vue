@@ -2,7 +2,7 @@
   <div class="school-selector">
     <h1> SchoolSelector</h1>
     <li v-for="knox in schools" :key="knox.id" :knox="knox">
-      {{knox.id}}
+      {{knox["school.name"]}}
     </li>
 
   </div>
@@ -17,16 +17,16 @@ export default {
  components: {  },
  data() {
      return {
-       metadata: null,
        schools: null
+       
      }
    },
   methods:{
 
     getCollegeData(){
-      var baby = this;
+      var dude = this;
        CollegeService.index().then((response) => {
-       baby.schools = response.data.results;
+       dude.schools = JSON.parse(JSON.stringify(response.data.results));
      }).catch(e => {
        console.log(e);
      });
