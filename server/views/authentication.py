@@ -103,7 +103,52 @@ def login():
             "firstname": user.firstname,
             "lastname": user.lastname,
             "usertype": user.usertype,
-            "userschool": user.userschool
+            "userschool": user.userschool,
+            "usermajor": user.usermajor,
+            "userbio": user.userbio,
+            "userinterests": user.userinterests
         },
         "token": token.decode("UTF-8")
     })
+
+@app.route("/api/change", methods=["POST"])
+@login_required
+def change(username):
+    schema = Schema({
+        "usermajor": str,
+        "userinterests": str,
+        "userbio": str,
+    })
+    validated = schema.validate(request.json)
+
+    users = User.objects(username=username)
+
+    if len(users) == 0:
+        return jsonify({"error": "User not found"}), 403
+
+    user = users.first()
+
+    
+    user.usermajor=validated["usermajor"]
+    user.userinterests=validated["userinterests"]
+    user.userbio=validated["userbio"]
+    
+    user.save()
+
+    return jsonify({
+        "success": True,
+        "user": {
+            "username": user.username,
+            "email": user.email,
+            "password": user.password,
+            "created": str(user.created),
+            "firstname": user.firstname,
+            "lastname": user.lastname,
+            "usertype": user.usertype,
+            "userschool": user.userschool,
+            "usermajor": user.usermajor,
+            "userinterests": user.userinterests,
+            "userbio": user.userbio
+        }
+    })
+
