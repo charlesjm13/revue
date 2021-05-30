@@ -140,11 +140,6 @@
 </script>
 
 <style>
-<<<<<<< HEAD
-    form {
-        align-content: center;
-    }
-=======
   form{
     max-width: 700px;
     margin: 30px auto;
@@ -166,7 +161,6 @@
     font-size:20px;
   }
 
->>>>>>> shahm
 </style>
 
 
