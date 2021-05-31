@@ -143,7 +143,7 @@ class Qpost(Document):
             "user": self.user,
             "content": self.content,
             "comments": self.comments,
-            "created": self.ccreated,
+            "created": self.created,
             "upvotes": self.upvotes,
             "downvotes": self.downvotes
             
