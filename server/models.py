@@ -136,7 +136,7 @@ class Qpost(Document):
     upvotes = ListField(ReferenceField(User, reverse_delete_rule=CASCADE))
     downvotes = ListField(ReferenceField(User, reverse_delete_rule=CASCADE))
 
-def to_public_json(self):
+    def to_public_json(self):
         data = {
             "id": str(self.id),
             "title": self.title,
