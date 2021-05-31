@@ -4,7 +4,7 @@
       <div class="body container">
         <Vote :upvotes="upvotes" :downvotes="downvotes" :postId="id" @error="(value) => {error = value}"></Vote>
         <div class="content">
-          <svg id="delete-button" @click="deletePost" fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <svg id="delete-button" @click="deleteQPost" fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
             <title>Delete Post</title>
             <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
             <path d="M0 0h24v24H0z" fill="none"/>
@@ -87,16 +87,17 @@ export default {
 
     methods: {
         deleteQPost() {
+            console.log("testing delete button")
             if (this.deleteVerify) {
                 QPostService.delete(this.id)
                     .then(() => {
-                        this.$router.push({ name: 'Home' })
+                        this.$router.push({ name: "QnAç" })
                     })
                     .catch(e => {
                         this.error = e.response.data.error
                     })
             } else {
-                this.deleteVerify = true
+                this.deleteVerify = true;
             }
         },
 
@@ -138,16 +139,16 @@ export default {
     float: left;
 }
 
-.subvue-info {
+/* .subvue-info {
     width: 20%;
     float: right;
-}
+} */
 
 .body {
     background: #eeeeee;
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 20fr;
+    grid-template-columns: 2fr 20fr;
 }
 
 #delete-button {
@@ -182,7 +183,7 @@ h3 {
 }
 
 .post-id {
-    text-align: right;
+    text-align: center;
     display: block;
 }
 

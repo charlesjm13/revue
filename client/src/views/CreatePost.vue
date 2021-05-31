@@ -43,15 +43,22 @@ export default {
 
             QPostService.create(formData)
                  .then(response => {
+                    //  console.log(response.data)
                      this.$router.push({
-                        name: 'Qpost',
+                        name: 'QnA',
                           params: { id: response.data.id } 
                      })
                  })
                  .catch(error => {
                      this.error = error.response.data.error
                  })
+                 
         },
+            qnaDirect(){
+        this.$router.push({
+                name: 'QnA'
+            })
+            }
 
         // fileChanged(e) {
         //     this.image = e.target.files[0]
