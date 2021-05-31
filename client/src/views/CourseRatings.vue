@@ -106,9 +106,9 @@ export default {
 
 <style lang="css">
 select, input {
-  background: #f0ead6;
+  background: #f8dbd5;
 }
 .home-container {
-  background: #f0ead6;
+  background: #f8dbd5;
 }
 </style>

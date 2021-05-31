@@ -253,7 +253,18 @@ color: rgb(255, 255, 255);
 #radio2 :checked ~ .navigation-auto .auto-btn2 {
   background: #40d3dc;
 }
+<<<<<<< HEAD
 #radio3 :checked ~ .navigation-auto .auto-btn3 {
   background: #40d3dc;
 } 
+=======
+footer{
+  width: 100%;
+  background-color:color;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}
+>>>>>>> shahm
 </style>

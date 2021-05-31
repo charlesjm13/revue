@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="ratings" style="background: #f0ead6; width: 100%; margin:auto;">
+  <div class="ratings" style="background: #f8dbd5; width: 100%; margin:auto;">
     <div>
         <div>
             <Stars @clicked="updateAcademicsStars"></Stars> 
