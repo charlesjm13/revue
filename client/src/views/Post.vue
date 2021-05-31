@@ -91,7 +91,7 @@ export default {
             if (this.deleteVerify) {
                 QPostService.delete(this.id)
                     .then(() => {
-                        this.$router.push({ name: "QnAç" })
+                        this.$router.push({ name: "QnA" })
                     })
                     .catch(e => {
                         this.error = e.response.data.error
